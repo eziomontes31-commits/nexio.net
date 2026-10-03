@@ -1,0 +1,2075 @@
+<html lang="es"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=8d8e1b90-a10e-4bd2-8670-311a212c3321
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXIO.NET - Clientes y Negocios</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="f4cbaecb-dea8-467b-ad7d-7c55f1016dde" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="f4cbaecb-dea8-467b-ad7d-7c55f1016dde" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Panel Utilities */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glowing Promotional Banner Border */
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(236, 72, 153, 0.8); box-shadow: 0 0 15px rgba(236, 72, 153, 0.4); }
+            50% { border-color: rgba(99, 102, 241, 0.8); box-shadow: 0 0 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        .promo-glow {
+            animation: pulse-border 3s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+
+        /* Mobile Simulation Frame */
+        .sim-mobile-frame {
+            max-width: 430px;
+            margin: 0 auto;
+            border-radius: 36px;
+            border: 10px solid #1f2937;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* =============================================================
+           RESPONSIVE: iconos y elementos adaptados a cada dispositivo
+           (el prefijo "html body" asegura prioridad sobre Tailwind CDN)
+           ============================================================= */
+
+        /* ---------- Tablets (640px - 1023px) ---------- */
+        @media (max-width: 1023px) {
+            html body { font-size: 15px; }
+            html body .text-3xl { font-size: 1.6rem; }
+            html body .text-2xl { font-size: 1.3rem; }
+            html body .text-xl { font-size: 1.1rem; }
+
+            html body .w-16.h-16 { width: 3.25rem; height: 3.25rem; }
+            html body .w-14.h-14 { width: 3rem; height: 3rem; }
+            html body .w-12.h-12 { width: 2.75rem; height: 2.75rem; }
+        }
+
+        /* ---------- Celulares (hasta 639px) ---------- */
+        @media (max-width: 639px) {
+            html body { font-size: 14px; }
+
+            /* Iconos de Font Awesome a la mitad del tamaño anterior */
+            html body .fa-solid,
+            html body .fa-regular,
+            html body .fa-brands { font-size: 0.6em; }
+            html body i.text-3xl { font-size: 0.75rem; }
+            html body i.text-2xl { font-size: 0.65rem; }
+            html body i.text-xl,
+            html body i.text-lg { font-size: 0.6rem; }
+            html body i.text-sm { font-size: 0.5rem; }
+
+            /* Títulos */
+            html body .text-xl { font-size: 1rem; line-height: 1.4rem; }
+            html body .text-lg { font-size: 0.95rem; line-height: 1.35rem; }
+            html body .text-base { font-size: 0.9rem; }
+
+            /* Logos, avatares y contenedores de iconos */
+            html body .w-16.h-16 { width: 1.5rem; height: 1.5rem; }
+            html body .w-14.h-14 { width: 1.35rem; height: 1.35rem; }
+            html body .w-12.h-12 { width: 1.25rem; height: 1.25rem; }
+            html body .w-10.h-10 { width: 1.1rem; height: 1.1rem; }
+            html body .w-8.h-8 { width: 1rem; height: 1rem; }
+            html body .w-6.h-6 { width: 0.75rem; height: 0.75rem; }
+            html body .w-5.h-5 { width: 0.65rem; height: 0.65rem; }
+            html body .w-4.h-4:not(input) { width: 0.6rem; height: 0.6rem; }
+
+            /* Imágenes / videos de las tarjetas más compactos */
+            html body .h-48 { height: 10.5rem; }
+            html body .h-40 { height: 9rem; }
+
+            /* Paneles y botones con menos relleno */
+            html body .glass-panel.p-5,
+            html body .glass-panel.p-6 { padding: 0.875rem; }
+            html body .px-4.py-2 { padding: 0.4rem 0.75rem; }
+            html body .px-3.py-1\.5 { padding: 0.3rem 0.55rem; }
+
+            /* Barra de navegación: se acomoda en varias filas si no cabe */
+            #globalHeader .max-w-7xl {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.5rem 0.75rem;
+            }
+            #globalHeader h1 { font-size: 1rem; }
+            #globalHeader button { font-size: 11px; }
+            #audioLabel { display: none; }
+
+            #appContainer { padding: 0.75rem; }
+        }
+
+        /* ---------- Celulares muy pequeños (hasta 379px) ---------- */
+        @media (max-width: 379px) {
+            html body { font-size: 13px; }
+            html body .fa-solid,
+            html body .fa-regular,
+            html body .fa-brands { font-size: 0.55em; }
+            html body .w-16.h-16 { width: 1.35rem; height: 1.35rem; }
+            html body .w-10.h-10 { width: 1rem; height: 1rem; }
+            html body .h-48 { height: 9rem; }
+            html body .h-40 { height: 8rem; }
+        }
+
+        /* Vista Celular simulada en escritorio: aplicar tamaños de móvil */
+        .sim-mobile-frame i:is(.fa-solid, .fa-regular, .fa-brands):not(.text-3xl):not(.text-lg) { font-size: 0.6em !important; }
+        .sim-mobile-frame i.text-3xl { font-size: 0.75rem !important; }
+        .sim-mobile-frame i.text-lg { font-size: 0.6rem !important; }
+        .sim-mobile-frame .h-48 { height: 10.5rem !important; }
+        .sim-mobile-frame .h-40 { height: 9rem !important; }
+        .sim-mobile-frame .w-16.h-16 { width: 1.5rem !important; height: 1.5rem !important; }
+        .sim-mobile-frame .w-14.h-14 { width: 1.35rem !important; height: 1.35rem !important; }
+        .sim-mobile-frame .w-8.h-8 { width: 1rem !important; height: 1rem !important; }
+        .sim-mobile-frame .w-5.h-5 { width: 0.65rem !important; height: 0.65rem !important; }
+        .sim-mobile-frame .w-4.h-4:not(input) { width: 0.6rem !important; height: 0.6rem !important; }
+        .sim-mobile-frame .text-xl { font-size: 1rem !important; }
+        .sim-mobile-frame .text-lg { font-size: 0.95rem !important; }
+        .sim-mobile-frame .lg\:grid-cols-4,
+        .sim-mobile-frame .md\:grid-cols-3,
+        .sim-mobile-frame .md\:grid-cols-2,
+        .sim-mobile-frame .sm\:grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+        .sim-mobile-frame .lg\:col-span-3 { grid-column: auto !important; }
+
+        /* =============================================================
+           CARRUSELES HORIZONTALES: promociones y tiendas se deslizan
+           con el dedo en celulares y tablets
+           ============================================================= */
+        @media (max-width: 1023px) {
+            html body #promosListGrid,
+            html body #storesDirectoryList {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 0.75rem;
+                overflow-x: auto;
+                overflow-y: hidden;
+                max-height: none;
+                padding-bottom: 0.5rem;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior-x: contain;
+                scrollbar-width: thin;
+            }
+            html body #promosListGrid > *,
+            html body #storesDirectoryList > * {
+                margin-top: 0 !important;
+                scroll-snap-align: start;
+            }
+            html body #promosListGrid > * { flex: 0 0 45%; }
+            html body #storesDirectoryList > * { flex: 0 0 42%; }
+            html body #promosListGrid > .col-span-full,
+            html body #storesDirectoryList > p { flex-basis: 100%; }
+            .swipe-hint { display: inline-flex !important; }
+        }
+        @media (max-width: 639px) {
+            html body #promosListGrid > * { flex-basis: 72%; }
+            html body #storesDirectoryList > * { flex-basis: 70%; }
+        }
+        .sim-mobile-frame #promosListGrid,
+        .sim-mobile-frame #storesDirectoryList {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 0.75rem;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            max-height: none !important;
+            padding-bottom: 0.5rem;
+            scroll-snap-type: x mandatory;
+        }
+        .sim-mobile-frame #promosListGrid > *,
+        .sim-mobile-frame #storesDirectoryList > * {
+            flex: 0 0 72%;
+            margin-top: 0 !important;
+            scroll-snap-align: start;
+        }
+        .sim-mobile-frame #promosListGrid > .col-span-full,
+        .sim-mobile-frame #storesDirectoryList > p { flex-basis: 100%; }
+        .sim-mobile-frame .swipe-hint { display: inline-flex !important; }
+        .swipe-hint { display: none; }
+        .is-dragging { cursor: grabbing; scroll-snap-type: none !important; user-select: none; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-bottom-10{bottom:-2.5rem}.-right-10{right:-2.5rem}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.bottom-2{bottom:0.5rem}.left-2{left:0.5rem}.right-2{right:0.5rem}.top-2{top:0.5rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-1{margin-top:0.25rem;margin-bottom:0.25rem}.-mt-1{margin-top:-0.25rem}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.ml-0\.5{margin-left:0.125rem}.line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-4{height:1rem}.h-40{height:10rem}.h-6{height:1.5rem}.h-full{height:100%}.h-48{height:12rem}.h-5{height:1.25rem}.h-8{height:2rem}.max-h-\[500px\]{max-height:500px}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-4{width:1rem}.w-40{width:10rem}.w-6{width:1.5rem}.w-full{width:100%}.w-5{width:1.25rem}.w-8{width:2rem}.max-w-7xl{max-width:80rem}.max-w-\[120px\]{max-width:120px}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.max-w-\[90px\]{max-width:90px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.select-all{-webkit-user-select:all;user-select:all}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-2\.5{gap:0.625rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]){border-color:rgb(30 41 59 / 0.6)}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-amber-500\/20{border-color:rgb(245 158 11 / 0.2)}.border-cyan-400{--tw-border-opacity:1;border-color:rgb(34 211 238 / var(--tw-border-opacity, 1))}.border-cyan-500{--tw-border-opacity:1;border-color:rgb(6 182 212 / var(--tw-border-opacity, 1))}.border-cyan-500\/30{border-color:rgb(6 182 212 / 0.3)}.border-cyan-800\/50{border-color:rgb(21 94 117 / 0.5)}.border-indigo-500\/20{border-color:rgb(99 102 241 / 0.2)}.border-indigo-500\/30{border-color:rgb(99 102 241 / 0.3)}.border-pink-400{--tw-border-opacity:1;border-color:rgb(244 114 182 / var(--tw-border-opacity, 1))}.border-pink-500{--tw-border-opacity:1;border-color:rgb(236 72 153 / var(--tw-border-opacity, 1))}.border-pink-500\/30{border-color:rgb(236 72 153 / 0.3)}.border-pink-500\/40{border-color:rgb(236 72 153 / 0.4)}.border-rose-700\/50{border-color:rgb(190 18 60 / 0.5)}.border-rose-800\/40{border-color:rgb(159 18 57 / 0.4)}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-slate-800\/80{border-color:rgb(30 41 59 / 0.8)}.bg-amber-500\/10{background-color:rgb(245 158 11 / 0.1)}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.bg-cyan-500\/20{background-color:rgb(6 182 212 / 0.2)}.bg-cyan-600{--tw-bg-opacity:1;background-color:rgb(8 145 178 / var(--tw-bg-opacity, 1))}.bg-cyan-950\/60{background-color:rgb(8 51 68 / 0.6)}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-indigo-500\/20{background-color:rgb(99 102 241 / 0.2)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-pink-500\/10{background-color:rgb(236 72 153 / 0.1)}.bg-pink-500\/20{background-color:rgb(236 72 153 / 0.2)}.bg-pink-600{--tw-bg-opacity:1;background-color:rgb(219 39 119 / var(--tw-bg-opacity, 1))}.bg-pink-950\/80{background-color:rgb(80 7 36 / 0.8)}.bg-rose-900\/40{background-color:rgb(136 19 55 / 0.4)}.bg-rose-900\/50{background-color:rgb(136 19 55 / 0.5)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-slate-900\/80{background-color:rgb(15 23 42 / 0.8)}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.bg-slate-950\/90{background-color:rgb(2 6 23 / 0.9)}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-indigo-600\/30{background-color:rgb(79 70 229 / 0.3)}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72 / var(--tw-bg-opacity, 1))}.bg-slate-900\/60{background-color:rgb(15 23 42 / 0.6)}.bg-slate-950\/85{background-color:rgb(2 6 23 / 0.85)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.from-cyan-400{--tw-gradient-from:#22d3ee var(--tw-gradient-from-position);--tw-gradient-to:rgb(34 211 238 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-cyan-500{--tw-gradient-from:#06b6d4 var(--tw-gradient-from-position);--tw-gradient-to:rgb(6 182 212 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-600{--tw-gradient-from:#059669 var(--tw-gradient-from-position);--tw-gradient-to:rgb(5 150 105 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgb(79 70 229 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-900\/30{--tw-gradient-from:rgb(49 46 129 / 0.3) var(--tw-gradient-from-position);--tw-gradient-to:rgb(49 46 129 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-500{--tw-gradient-from:#ec4899 var(--tw-gradient-from-position);--tw-gradient-to:rgb(236 72 153 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-600{--tw-gradient-from:#db2777 var(--tw-gradient-from-position);--tw-gradient-to:rgb(219 39 119 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-900\/60{--tw-gradient-from:rgb(131 24 67 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(131 24 67 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-900{--tw-gradient-from:#0f172a var(--tw-gradient-from-position);--tw-gradient-to:rgb(15 23 42 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-900\/90{--tw-gradient-from:rgb(15 23 42 / 0.9) var(--tw-gradient-from-position);--tw-gradient-to:rgb(15 23 42 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-indigo-500{--tw-gradient-to:rgb(99 102 241 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #6366f1 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-indigo-950\/60{--tw-gradient-to:rgb(30 27 75 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(30 27 75 / 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-purple-600{--tw-gradient-to:rgb(147 51 234 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #9333ea var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-purple-900\/60{--tw-gradient-to:rgb(88 28 135 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(88 28 135 / 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-slate-900\/50{--tw-gradient-to:rgb(15 23 42 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(15 23 42 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-cyan-600{--tw-gradient-to:#0891b2 var(--tw-gradient-to-position)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-indigo-900\/60{--tw-gradient-to:rgb(49 46 129 / 0.6) var(--tw-gradient-to-position)}.to-pink-500{--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}.to-pink-600{--tw-gradient-to:#db2777 var(--tw-gradient-to-position)}.to-pink-950\/20{--tw-gradient-to:rgb(80 7 36 / 0.2) var(--tw-gradient-to-position)}.to-purple-900\/30{--tw-gradient-to:rgb(88 28 135 / 0.3) var(--tw-gradient-to-position)}.to-rose-600{--tw-gradient-to:#e11d48 var(--tw-gradient-to-position)}.to-slate-900{--tw-gradient-to:#0f172a var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-cover{object-fit:cover}.p-0\.5{padding:0.125rem}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pb-3{padding-bottom:0.75rem}.pr-1{padding-right:0.25rem}.pt-1{padding-top:0.25rem}.pt-2{padding-top:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-cyan-300{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-pink-300{--tw-text-opacity:1;color:rgb(249 168 212 / var(--tw-text-opacity, 1))}.text-pink-400{--tw-text-opacity:1;color:rgb(244 114 182 / var(--tw-text-opacity, 1))}.text-pink-500{--tw-text-opacity:1;color:rgb(236 72 153 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cyan-500\/20{--tw-shadow-color:rgb(6 182 212 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-pink-500\/20{--tw-shadow-color:rgb(236 72 153 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.file\:mr-2::file-selector-button{margin-right:0.5rem}.file\:rounded-xl::file-selector-button{border-radius:0.75rem}.file\:border-0::file-selector-button{border-width:0px}.file\:bg-cyan-600::file-selector-button{--tw-bg-opacity:1;background-color:rgb(8 145 178 / var(--tw-bg-opacity, 1))}.file\:bg-pink-600::file-selector-button{--tw-bg-opacity:1;background-color:rgb(219 39 119 / var(--tw-bg-opacity, 1))}.file\:bg-gradient-to-r::file-selector-button{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.file\:from-pink-600::file-selector-button{--tw-gradient-from:#db2777 var(--tw-gradient-from-position);--tw-gradient-to:rgb(219 39 119 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.file\:to-indigo-600::file-selector-button{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.file\:px-3::file-selector-button{padding-left:0.75rem;padding-right:0.75rem}.file\:py-1\.5::file-selector-button{padding-top:0.375rem;padding-bottom:0.375rem}.file\:text-xs::file-selector-button{font-size:0.75rem;line-height:1rem}.file\:font-semibold::file-selector-button{font-weight:600}.file\:text-white::file-selector-button{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:border-indigo-500\/50:hover{border-color:rgb(99 102 241 / 0.5)}.hover\:border-pink-500:hover{--tw-border-opacity:1;border-color:rgb(236 72 153 / var(--tw-border-opacity, 1))}.hover\:border-slate-700:hover{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.hover\:bg-amber-500:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.hover\:bg-cyan-500:hover{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-500:hover{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-500:hover{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.hover\:bg-pink-500:hover{--tw-bg-opacity:1;background-color:rgb(236 72 153 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-800\/50:hover{background-color:rgb(159 18 57 / 0.5)}.hover\:bg-rose-800\/80:hover{background-color:rgb(159 18 57 / 0.8)}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:bg-pink-900\/90:hover{background-color:rgb(131 24 67 / 0.9)}.hover\:bg-pink-950\/90:hover{background-color:rgb(80 7 36 / 0.9)}.hover\:bg-rose-800\/60:hover{background-color:rgb(159 18 57 / 0.6)}.hover\:bg-slate-900\/50:hover{background-color:rgb(15 23 42 / 0.5)}.hover\:from-cyan-400:hover{--tw-gradient-from:#22d3ee var(--tw-gradient-from-position);--tw-gradient-to:rgb(34 211 238 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:from-pink-400:hover{--tw-gradient-from:#f472b6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(244 114 182 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-indigo-500:hover{--tw-gradient-to:#6366f1 var(--tw-gradient-to-position)}.hover\:text-indigo-300:hover{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:opacity-90:hover{opacity:0.9}.focus\:border-cyan-500:focus{--tw-border-opacity:1;border-color:rgb(6 182 212 / var(--tw-border-opacity, 1))}.focus\:border-pink-500:focus{--tw-border-opacity:1;border-color:rgb(236 72 153 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-pink-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(236 72 153 / var(--tw-ring-opacity, 1))}.group\/badge:hover .group-hover\/badge\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-pink-600{--tw-bg-opacity:1;background-color:rgb(219 39 119 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:col-span-2{grid-column:span 2 / span 2}.sm\:inline{display:inline}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 768px){.md\:inline-block{display:inline-block}.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:p-6{padding:1.5rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:col-span-3{grid-column:span 3 / span 3}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJlbmFibGVkIiwiTElOS0VESU4iOiJlbmFibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMy4wIiwic2NvcmUiOjIwMzAwMH1d" __processed_206d8610-bf7a-458d-83ff-92a0e226c5c5__="true">
+
+    <!-- Audio Engine HTML Element -->
+    <audio id="bgAudioPlayer" loop="" preload="none">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/3/30/Lofi_track.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Global Header & Seasonal Event Theme Banner -->
+    <header id="globalHeader" class="sticky top-0 z-50 glass-panel border-b border-slate-800">
+        <!-- Event/Theme GIF/Banner Row -->
+        <div id="seasonalBannerContainer" class="bg-gradient-to-r from-pink-900/60 via-purple-900/60 to-indigo-900/60 text-white text-xs py-1.5 px-4 flex items-center justify-between border-b border-white/10" bis_skin_checked="1">
+            <div class="flex items-center gap-2 overflow-hidden" bis_skin_checked="1">
+                <img id="seasonalThemeGif" src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" alt="Evento" class="w-6 h-6 object-cover rounded-full border border-pink-400">
+                <span id="seasonalThemeTitle" class="font-semibold tracking-wide truncate">🎃 Ofertas Monstruosas de Temporada</span>
+            </div>
+            <div class="flex items-center gap-3 shrink-0" bis_skin_checked="1">
+                <button onclick="toggleAudioPlayback()" class="hover:bg-white/10 px-2.5 py-1 rounded-lg text-[11px] flex items-center gap-1.5 transition border border-white/10 bg-slate-900/40">
+                    <i id="audioIcon" class="fa-solid fa-music text-pink-400"></i>
+                    <span id="audioLabel">Música: Pausa</span>
+                    <span id="currentTrackBadge" class="hidden md:inline-block text-[10px] text-cyan-300 font-semibold max-w-[120px] truncate bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-800/50">Lofi Chill Lounge</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Global Announcement Bar (Admin Message) -->
+        <div id="globalAnnouncementBar" class="bg-amber-500/10 border-b border-amber-500/20 text-amber-300 text-xs px-4 py-1 flex items-center gap-2" bis_skin_checked="1">
+            <i class="fa-solid fa-bullhorn text-amber-400 animate-bounce"></i>
+            <marquee id="globalAnnouncementText" behavior="scroll" direction="left" class="font-medium">¡Atención! Todas las tiendas registradas tienen envíos con descuento en Sahagún, Cereté, Montería y Lorica.</marquee>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4" bis_skin_checked="1">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="clearStoreFilter(); switchRole('client');" bis_skin_checked="1">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-pink-500 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20" bis_skin_checked="1">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center" bis_skin_checked="1">
+                        <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 text-lg">N</span>
+                    </div>
+                </div>
+                <div bis_skin_checked="1">
+                    <h1 class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                        NEXIO<span class="text-pink-500">.NET</span>
+                    </h1>
+                    <p class="text-[10px] text-slate-400 -mt-1 font-medium">Plataforma Comercial de Tu Región</p>
+                </div>
+            </div>
+
+            <!-- Role View Switcher Buttons -->
+            <div class="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800" bis_skin_checked="1">
+                <button onclick="switchRole('client')" id="btnRoleClient" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-pink-600 text-white shadow-md">
+                    <i class="fa-solid fa-store"></i> <span class="hidden sm:inline">Portal</span> Clientes
+                </button>
+                <button onclick="switchRole('business')" id="btnRoleBusiness" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-briefcase"></i> <span class="hidden sm:inline">Mi</span> Negocio
+                </button>
+            </div>
+
+            <!-- Device Simulation Toggle -->
+            <div class="hidden md:flex items-center gap-2" bis_skin_checked="1">
+                <button onclick="toggleMobileSim()" id="btnSimToggle" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-mobile-screen"></i> <span id="simToggleText">Vista Celular</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Application Screen Wrapper -->
+    <main id="appContainer" class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 transition-all duration-300">
+
+        <!-- ====================================================================
+             1. CUSTOMER PORTAL VIEW (PÁGINA DE CLIENTES)
+             ==================================================================== -->
+        <section id="clientView" class="space-y-6">
+            
+            <!-- Store Personal Catalog Filter Banner (Visible when tapping a store logo) -->
+            <div id="storeCatalogBanner" class="hidden glass-panel p-5 rounded-2xl border-2 border-cyan-500 bg-gradient-to-r from-slate-900 via-indigo-950/60 to-slate-900 flex flex-wrap items-center justify-between gap-4 transition-all duration-300" bis_skin_checked="1">
+                <div class="flex items-center gap-4" bis_skin_checked="1">
+                    <img id="storeBannerLogo" src="" alt="Logo Tienda" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400 shadow-lg shadow-cyan-500/20">
+                    <div bis_skin_checked="1">
+                        <div class="flex items-center gap-2" bis_skin_checked="1">
+                            <span class="px-2 py-0.5 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold text-[10px] rounded-md uppercase">Catálogo Completo</span>
+                            <span id="storeBannerZone" class="text-xs text-slate-400 font-medium">📍 Zona</span>
+                        </div>
+                        <h2 id="storeBannerName" class="text-xl font-black text-white mt-0.5">Nombre del Negocio</h2>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center gap-1">
+                            <i class="fa-solid fa-layer-group text-pink-400"></i> Mostrando todas las publicaciones y productos de este negocio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2" bis_skin_checked="1">
+                    <a id="storeBannerWhatsappBtn" href="#" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Tienda
+                    </a>
+                    <button onclick="clearStoreFilter()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-bold border border-slate-700 flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-xmark text-rose-400"></i> Ver Todas las Tiendas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Promos del Día (HOT PROMOS) Highlight Banner -->
+            <div class="glass-panel p-5 rounded-2xl promo-glow relative overflow-hidden" bis_skin_checked="1">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-pink-500/10 rounded-full blur-2xl pointer-events-none" bis_skin_checked="1"></div>
+                <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3" bis_skin_checked="1">
+                    <div class="flex items-center gap-3" bis_skin_checked="1">
+                        <span class="px-3 py-1 bg-gradient-to-r from-pink-600 to-rose-600 text-white text-xs font-black rounded-full uppercase tracking-wider animate-pulse flex items-center gap-1">
+                            <i class="fa-solid fa-fire"></i> Ofertón del Día
+                        </span>
+                        <h2 class="text-lg font-bold text-white tracking-wide">🔥 PROMOCIONES DESTACADAS</h2>
+                    </div>
+                    <span class="text-xs text-slate-400">Toca el logo para ver el catálogo de la tienda</span>
+                    <span class="swipe-hint items-center gap-1 text-[10px] text-pink-300 font-semibold whitespace-nowrap">Desliza <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Horizontal Scroll / Grid for Promos del Día -->
+                <div id="promosListGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" bis_skin_checked="1">
+                        <div class="glass-card rounded-xl overflow-hidden border border-pink-500/30 flex flex-col justify-between group hover:border-pink-500 transition duration-300" bis_skin_checked="1">
+                            <div class="relative h-40 bg-slate-900 overflow-hidden" bis_skin_checked="1">
+                                
+                                    <img src="data:image/jpeg;base64,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" alt="Pizza" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+                                <span class="absolute top-2 left-2 px-2 py-0.5 bg-rose-600 text-white font-black text-[10px] rounded-md shadow">
+                                    22% OFF
+                                </span>
+                                
+                                <!-- Clickable Store Logo/Name Badge to filter by store -->
+                                <button onclick="filterByStore('acc_1790974287173')" class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-slate-950/85 hover:bg-pink-950/90 backdrop-blur px-2 py-1 rounded-lg border border-white/10 transition cursor-pointer" title="Ver catálogo de esta tienda">
+                                    <div class="flex items-center gap-1.5 overflow-hidden" bis_skin_checked="1">
+                                        <img src="https://placehold.co/100x100/1e293b/00f2fe?text=Pizz" class="w-4 h-4 rounded-full object-cover border border-cyan-400">
+                                        <span class="text-[11px] font-bold text-white truncate">Pizza</span>
+                                    </div>
+                                    <span class="text-[10px] text-cyan-400 font-semibold"><i class="fa-solid fa-eye text-[9px]"></i> Ver Tienda</span>
+                                </button>
+                            </div>
+                            <div class="p-3 space-y-2" bis_skin_checked="1">
+                                <h4 class="font-bold text-xs text-white line-clamp-1">Pizza</h4>
+                                <div class="flex items-baseline gap-2" bis_skin_checked="1">
+                                    <span class="text-sm font-extrabold text-pink-400">$35.000</span>
+                                    <span class="text-[11px] text-slate-500 line-through">$45.000</span>
+                                </div>
+                                <a href="https://wa.me/573001234567?text=Hola%20Pizza%2C%20vi%20en%20NEXIO.NET%20la%20promo%3A%20Pizza" target="_blank" class="w-full py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="glass-card rounded-xl overflow-hidden border border-pink-500/30 flex flex-col justify-between group hover:border-pink-500 transition duration-300" bis_skin_checked="1">
+                            <div class="relative h-40 bg-slate-900 overflow-hidden" bis_skin_checked="1">
+                                
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Audífonos Inalámbricos Bluetooth Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+                                <span class="absolute top-2 left-2 px-2 py-0.5 bg-rose-600 text-white font-black text-[10px] rounded-md shadow">
+                                    28% OFF
+                                </span>
+                                
+                                <!-- Clickable Store Logo/Name Badge to filter by store -->
+                                <button onclick="filterByStore('2')" class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-slate-950/85 hover:bg-pink-950/90 backdrop-blur px-2 py-1 rounded-lg border border-white/10 transition cursor-pointer" title="Ver catálogo de esta tienda">
+                                    <div class="flex items-center gap-1.5 overflow-hidden" bis_skin_checked="1">
+                                        <img src="https://placehold.co/100x100/06b6d4/ffffff?text=Tecno" class="w-4 h-4 rounded-full object-cover border border-cyan-400">
+                                        <span class="text-[11px] font-bold text-white truncate">TecnoCereté</span>
+                                    </div>
+                                    <span class="text-[10px] text-cyan-400 font-semibold"><i class="fa-solid fa-eye text-[9px]"></i> Ver Tienda</span>
+                                </button>
+                            </div>
+                            <div class="p-3 space-y-2" bis_skin_checked="1">
+                                <h4 class="font-bold text-xs text-white line-clamp-1">Audífonos Inalámbricos Bluetooth Pro</h4>
+                                <div class="flex items-baseline gap-2" bis_skin_checked="1">
+                                    <span class="text-sm font-extrabold text-pink-400">$65.000</span>
+                                    <span class="text-[11px] text-slate-500 line-through">$90.000</span>
+                                </div>
+                                <a href="https://wa.me/573002223344?text=Hola%20TecnoCeret%C3%A9%2C%20vi%20en%20NEXIO.NET%20la%20promo%3A%20Aud%C3%ADfonos%20Inal%C3%A1mbricos%20Bluetooth%20Pro" target="_blank" class="w-full py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="glass-card rounded-xl overflow-hidden border border-pink-500/30 flex flex-col justify-between group hover:border-pink-500 transition duration-300" bis_skin_checked="1">
+                            <div class="relative h-40 bg-slate-900 overflow-hidden" bis_skin_checked="1">
+                                
+                                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Zapatillas Urbanas Edición Limitada" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+                                <span class="absolute top-2 left-2 px-2 py-0.5 bg-rose-600 text-white font-black text-[10px] rounded-md shadow">
+                                    29% OFF
+                                </span>
+                                
+                                <!-- Clickable Store Logo/Name Badge to filter by store -->
+                                <button onclick="filterByStore('1')" class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-slate-950/85 hover:bg-pink-950/90 backdrop-blur px-2 py-1 rounded-lg border border-white/10 transition cursor-pointer" title="Ver catálogo de esta tienda">
+                                    <div class="flex items-center gap-1.5 overflow-hidden" bis_skin_checked="1">
+                                        <img src="https://placehold.co/100x100/ec4899/ffffff?text=Modas" class="w-4 h-4 rounded-full object-cover border border-cyan-400">
+                                        <span class="text-[11px] font-bold text-white truncate">Modas Sahagún</span>
+                                    </div>
+                                    <span class="text-[10px] text-cyan-400 font-semibold"><i class="fa-solid fa-eye text-[9px]"></i> Ver Tienda</span>
+                                </button>
+                            </div>
+                            <div class="p-3 space-y-2" bis_skin_checked="1">
+                                <h4 class="font-bold text-xs text-white line-clamp-1">Zapatillas Urbanas Edición Limitada</h4>
+                                <div class="flex items-baseline gap-2" bis_skin_checked="1">
+                                    <span class="text-sm font-extrabold text-pink-400">$85.000</span>
+                                    <span class="text-[11px] text-slate-500 line-through">$120.000</span>
+                                </div>
+                                <a href="https://wa.me/573001112233?text=Hola%20Modas%20Sahag%C3%BAn%2C%20vi%20en%20NEXIO.NET%20la%20promo%3A%20Zapatillas%20Urbanas%20Edici%C3%B3n%20Limitada" target="_blank" class="w-full py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Search & Zone / Catalog Filters -->
+            <div class="glass-panel p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4" bis_skin_checked="1">
+                <!-- Zone Selector -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full" id="zoneFilterContainer" bis_skin_checked="1">
+                <button onclick="filterByZone('ALL')" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition bg-pink-600 text-white shadow">
+                    <i class="fa-solid fa-location-dot"></i> Todas las Zonas
+                </button>
+            
+                    <button onclick="filterByZone('Sahagún')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+                        Sahagún
+                    </button>
+                
+                    <button onclick="filterByZone('Cereté')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+                        Cereté
+                    </button>
+                
+                    <button onclick="filterByZone('Montería')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+                        Montería
+                    </button>
+                
+                    <button onclick="filterByZone('Lorica')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+                        Lorica
+                    </button>
+                
+                    <button onclick="filterByZone('Chinú')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-slate-900 text-slate-400 hover:text-white border border-slate-800">
+                        Chinú
+                    </button>
+                </div>
+
+                <!-- Catalog Category Filter Selector -->
+                <div class="flex items-center gap-2" bis_skin_checked="1">
+                    <label class="text-xs text-slate-400 font-medium whitespace-nowrap"><i class="fa-solid fa-list-check"></i> Catálogo:</label>
+                    <select id="clientCategorySelect" onchange="renderClientFeed()" class="bg-slate-900 border border-slate-700 rounded-xl text-xs px-3 py-2 text-white focus:outline-none focus:border-cyan-500"><option value="ALL">Todas las Categorías</option><option value="General">General</option><option value="Ropa y Moda">Ropa y Moda</option><option value="Calzado">Calzado</option><option value="Comida y Restaurante">Comida y Restaurante</option><option value="Tecnología">Tecnología</option></select>
+                </div>
+            </div>
+
+            <!-- Main Content Grid (Stores Directory & Latest Images/Videos) -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6" bis_skin_checked="1">
+                <!-- Left Sidebar: Stores Directory -->
+                <div class="space-y-4" bis_skin_checked="1">
+                    <div class="glass-panel p-4 rounded-2xl" bis_skin_checked="1">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-3" bis_skin_checked="1">
+                            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+                                <i class="fa-solid fa-store text-cyan-400"></i> Tiendas Destacadas
+                            </h3>
+                            <span class="text-[10px] text-slate-400">Toca para abrir <span class="swipe-hint items-center gap-1 text-pink-300 font-semibold">· Desliza <i class="fa-solid fa-arrow-right"></i></span></span>
+                        </div>
+                        <div id="storesDirectoryList" class="space-y-2.5 max-h-[500px] overflow-y-auto pr-1" bis_skin_checked="1">
+                    <div onclick="filterByStore('1')" class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 flex items-center justify-between gap-2 transition cursor-pointer group" bis_skin_checked="1">
+                        <div class="flex items-center gap-2.5 overflow-hidden" bis_skin_checked="1">
+                            <img src="https://placehold.co/100x100/ec4899/ffffff?text=Modas" class="w-8 h-8 rounded-lg object-cover shrink-0 border border-slate-700 group-hover:scale-105 transition-transform">
+                            <div class="truncate" bis_skin_checked="1">
+                                <h5 class="text-xs font-bold text-white truncate ">Modas Sahagún</h5>
+                                <span class="text-[10px] text-slate-400">📍 Sahagún</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-1 bg-indigo-600/30 text-indigo-300 rounded-lg group-hover:bg-pink-600 group-hover:text-white font-bold transition">
+                            Catálogo
+                        </span>
+                    </div>
+                
+                    <div onclick="filterByStore('2')" class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 flex items-center justify-between gap-2 transition cursor-pointer group" bis_skin_checked="1">
+                        <div class="flex items-center gap-2.5 overflow-hidden" bis_skin_checked="1">
+                            <img src="https://placehold.co/100x100/06b6d4/ffffff?text=Tecno" class="w-8 h-8 rounded-lg object-cover shrink-0 border border-slate-700 group-hover:scale-105 transition-transform">
+                            <div class="truncate" bis_skin_checked="1">
+                                <h5 class="text-xs font-bold text-white truncate ">TecnoCereté</h5>
+                                <span class="text-[10px] text-slate-400">📍 Cereté</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-1 bg-indigo-600/30 text-indigo-300 rounded-lg group-hover:bg-pink-600 group-hover:text-white font-bold transition">
+                            Catálogo
+                        </span>
+                    </div>
+                
+                    <div onclick="filterByStore('acc_1790974287173')" class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 flex items-center justify-between gap-2 transition cursor-pointer group" bis_skin_checked="1">
+                        <div class="flex items-center gap-2.5 overflow-hidden" bis_skin_checked="1">
+                            <img src="https://placehold.co/100x100/1e293b/00f2fe?text=Pizz" class="w-8 h-8 rounded-lg object-cover shrink-0 border border-slate-700 group-hover:scale-105 transition-transform">
+                            <div class="truncate" bis_skin_checked="1">
+                                <h5 class="text-xs font-bold text-white truncate ">Pizza</h5>
+                                <span class="text-[10px] text-slate-400">📍 Sahagún</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-1 bg-indigo-600/30 text-indigo-300 rounded-lg group-hover:bg-pink-600 group-hover:text-white font-bold transition">
+                            Catálogo
+                        </span>
+                    </div>
+                </div>
+                    </div>
+
+                    <!-- Direct Support Contact Box -->
+                    <div class="glass-panel p-4 rounded-2xl bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border border-indigo-500/20" bis_skin_checked="1">
+                        <h4 class="font-bold text-xs text-indigo-300 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-headset"></i> Soporte NEXIO.NET
+                        </h4>
+                        <p class="text-xs text-slate-300 mb-3">¿Deseas publicar tu negocio o necesitas ayuda?</p>
+                        <a id="supportWhatsappLink" href="https://wa.me/573001234567?text=Hola%20Soporte%20NEXIO.NET%2C%20requiero%20informaci%C3%B3n%20para%20mi%20negocio." target="_blank" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Oficial
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Chronological Latest Media Feed (Newest First) -->
+                <div class="lg:col-span-3 space-y-4" bis_skin_checked="1">
+                    <div class="flex items-center justify-between" bis_skin_checked="1">
+                        <h3 class="font-bold text-base text-white flex items-center gap-2" id="feedMainTitle"><i class="fa-solid fa-clock-rotate-left text-pink-400"></i> Publicaciones Recientes</h3>
+                        <span class="text-xs text-slate-400" id="feedCountLabel">3 publicación(es) disponibles</span>
+                    </div>
+
+                    <div id="clientMediaGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" bis_skin_checked="1">
+                        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition duration-300 flex flex-col justify-between group" bis_skin_checked="1">
+                            <!-- Watermark Logo Overlay Container -->
+                            <div class="relative w-full h-48 bg-slate-950 overflow-hidden flex items-center justify-center" bis_skin_checked="1">
+                                
+                                    <img src="data:image/jpeg;base64,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" alt="Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+
+                                <!-- Clickable Store Logo Badge Watermark on top of image to open personal store catalog -->
+                                <button onclick="filterByStore('acc_1790974287173')" class="absolute top-2 right-2 flex items-center gap-1.5 bg-slate-950/85 hover:bg-pink-900/90 backdrop-blur px-2 py-1 rounded-xl border border-white/10 shadow transition cursor-pointer group/badge" title="Toca para ir al catálogo completo de Pizza">
+                                    <img src="https://placehold.co/100x100/1e293b/00f2fe?text=Pizz" alt="Logo" class="w-5 h-5 rounded-full object-cover border border-cyan-400 group-hover/badge:scale-110 transition-transform">
+                                    <span class="text-[10px] font-bold text-white truncate max-w-[90px]">Pizza</span>
+                                    <i class="fa-solid fa-chevron-right text-[8px] text-pink-400 ml-0.5"></i>
+                                </button>
+
+                                <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-slate-900/90 text-slate-300 text-[10px] font-medium rounded-md">
+                                    📂 Comida y Restaurante
+                                </span>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="p-3.5 space-y-2 flex-1 flex flex-col justify-between" bis_skin_checked="1">
+                                <div bis_skin_checked="1">
+                                    <h4 class="font-bold text-xs text-white line-clamp-2">Pizza</h4>
+                                    <p class="text-[10px] text-slate-400 mt-1">📍 Sahagún</p>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-800/80 space-y-2" bis_skin_checked="1">
+                                    <div class="flex items-baseline justify-between" bis_skin_checked="1">
+                                        <span class="text-xs text-slate-400">Precio:</span>
+                                        <span class="text-sm font-black text-cyan-400">$35.000</span>
+                                    </div>
+
+                                    <a href="https://wa.me/573001234567?text=Hola%20Pizza%2C%20estoy%20interesado%20en%3A%20Pizza" target="_blank" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                                        <i class="fa-brands fa-whatsapp"></i> Contactar Negocio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition duration-300 flex flex-col justify-between group" bis_skin_checked="1">
+                            <!-- Watermark Logo Overlay Container -->
+                            <div class="relative w-full h-48 bg-slate-950 overflow-hidden flex items-center justify-center" bis_skin_checked="1">
+                                
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Audífonos Inalámbricos Bluetooth Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+
+                                <!-- Clickable Store Logo Badge Watermark on top of image to open personal store catalog -->
+                                <button onclick="filterByStore('2')" class="absolute top-2 right-2 flex items-center gap-1.5 bg-slate-950/85 hover:bg-pink-900/90 backdrop-blur px-2 py-1 rounded-xl border border-white/10 shadow transition cursor-pointer group/badge" title="Toca para ir al catálogo completo de TecnoCereté">
+                                    <img src="https://placehold.co/100x100/06b6d4/ffffff?text=Tecno" alt="Logo" class="w-5 h-5 rounded-full object-cover border border-cyan-400 group-hover/badge:scale-110 transition-transform">
+                                    <span class="text-[10px] font-bold text-white truncate max-w-[90px]">TecnoCereté</span>
+                                    <i class="fa-solid fa-chevron-right text-[8px] text-pink-400 ml-0.5"></i>
+                                </button>
+
+                                <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-slate-900/90 text-slate-300 text-[10px] font-medium rounded-md">
+                                    📂 Tecnología
+                                </span>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="p-3.5 space-y-2 flex-1 flex flex-col justify-between" bis_skin_checked="1">
+                                <div bis_skin_checked="1">
+                                    <h4 class="font-bold text-xs text-white line-clamp-2">Audífonos Inalámbricos Bluetooth Pro</h4>
+                                    <p class="text-[10px] text-slate-400 mt-1">📍 Cereté</p>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-800/80 space-y-2" bis_skin_checked="1">
+                                    <div class="flex items-baseline justify-between" bis_skin_checked="1">
+                                        <span class="text-xs text-slate-400">Precio:</span>
+                                        <span class="text-sm font-black text-cyan-400">$65.000</span>
+                                    </div>
+
+                                    <a href="https://wa.me/573002223344?text=Hola%20TecnoCeret%C3%A9%2C%20estoy%20interesado%20en%3A%20Aud%C3%ADfonos%20Inal%C3%A1mbricos%20Bluetooth%20Pro" target="_blank" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                                        <i class="fa-brands fa-whatsapp"></i> Contactar Negocio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition duration-300 flex flex-col justify-between group" bis_skin_checked="1">
+                            <!-- Watermark Logo Overlay Container -->
+                            <div class="relative w-full h-48 bg-slate-950 overflow-hidden flex items-center justify-center" bis_skin_checked="1">
+                                
+                                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Zapatillas Urbanas Edición Limitada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                
+
+                                <!-- Clickable Store Logo Badge Watermark on top of image to open personal store catalog -->
+                                <button onclick="filterByStore('1')" class="absolute top-2 right-2 flex items-center gap-1.5 bg-slate-950/85 hover:bg-pink-900/90 backdrop-blur px-2 py-1 rounded-xl border border-white/10 shadow transition cursor-pointer group/badge" title="Toca para ir al catálogo completo de Modas Sahagún">
+                                    <img src="https://placehold.co/100x100/ec4899/ffffff?text=Modas" alt="Logo" class="w-5 h-5 rounded-full object-cover border border-cyan-400 group-hover/badge:scale-110 transition-transform">
+                                    <span class="text-[10px] font-bold text-white truncate max-w-[90px]">Modas Sahagún</span>
+                                    <i class="fa-solid fa-chevron-right text-[8px] text-pink-400 ml-0.5"></i>
+                                </button>
+
+                                <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-slate-900/90 text-slate-300 text-[10px] font-medium rounded-md">
+                                    📂 Calzado
+                                </span>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="p-3.5 space-y-2 flex-1 flex flex-col justify-between" bis_skin_checked="1">
+                                <div bis_skin_checked="1">
+                                    <h4 class="font-bold text-xs text-white line-clamp-2">Zapatillas Urbanas Edición Limitada</h4>
+                                    <p class="text-[10px] text-slate-400 mt-1">📍 Sahagún</p>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-800/80 space-y-2" bis_skin_checked="1">
+                                    <div class="flex items-baseline justify-between" bis_skin_checked="1">
+                                        <span class="text-xs text-slate-400">Precio:</span>
+                                        <span class="text-sm font-black text-cyan-400">$85.000</span>
+                                    </div>
+
+                                    <a href="https://wa.me/573001112233?text=Hola%20Modas%20Sahag%C3%BAn%2C%20estoy%20interesado%20en%3A%20Zapatillas%20Urbanas%20Edici%C3%B3n%20Limitada" target="_blank" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                                        <i class="fa-brands fa-whatsapp"></i> Contactar Negocio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             2. BUSINESS PORTAL VIEW (PÁGINA DE NEGOCIO)
+             ==================================================================== -->
+        <section id="businessView" class="hidden space-y-6">
+            
+            <!-- Business Login / Activation Box (When not logged in) -->
+            <div id="businessAuthContainer" class="max-w-md mx-auto glass-panel p-6 rounded-2xl border border-slate-800 space-y-4" bis_skin_checked="1">
+                <div class="text-center space-y-1" bis_skin_checked="1">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto text-indigo-400 text-xl" bis_skin_checked="1">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-white">Ingreso de Negocio</h2>
+                    <p class="text-xs text-slate-400">Ingresa tu código de acceso para habilitar tu tienda</p>
+                </div>
+
+                <div class="space-y-3" bis_skin_checked="1">
+                    <div bis_skin_checked="1">
+                        <label class="block text-xs text-slate-400 mb-1">Nombre Comercial de la Tienda</label>
+                        <input type="text" id="bizLoginName" placeholder="Ej. Calzados El Sol" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-pink-500">
+                    </div>
+                    <div bis_skin_checked="1">
+                        <label class="block text-xs text-slate-400 mb-1">Código de Activación Proporcionado por Admin</label>
+                        <input type="text" id="bizLoginCode" placeholder="Ej. NEX-8921-15D" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-pink-500 uppercase tracking-widest font-mono">
+                    </div>
+                    <button onclick="loginBusinessStore()" class="w-full py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs rounded-xl transition shadow-lg">
+                        Activar e Ingresar
+                    </button>
+                    <p id="bizLoginError" class="text-xs text-rose-400 text-center hidden"></p>
+                </div>
+            </div>
+
+            <!-- Business Dashboard (When logged in) -->
+            <div id="businessDashboard" class="hidden space-y-6" bis_skin_checked="1">
+                
+                <!-- Store Header Banner -->
+                <div class="glass-panel p-5 rounded-2xl flex flex-wrap items-center justify-between gap-4 border-l-4 border-cyan-400" bis_skin_checked="1">
+                    <div class="flex items-center gap-4" bis_skin_checked="1">
+                        <img id="activeBizLogoDisplay" src="https://placehold.co/100x100/1e293b/00f2fe?text=LOGO" alt="Logo Tienda" class="w-14 h-14 rounded-2xl object-cover border border-slate-700 shadow">
+                        <div bis_skin_checked="1">
+                            <h2 id="activeBizNameDisplay" class="text-xl font-bold text-white flex items-center gap-2">Mi Tienda</h2>
+                            <p class="text-xs text-slate-400 flex items-center gap-2">
+                                <span id="activeBizZoneBadge" class="bg-slate-800 px-2 py-0.5 rounded text-[11px] text-cyan-400">Zona</span>
+                                <span>| Días Restantes: <strong id="activeBizDaysLeft" class="text-emerald-400">30 días</strong></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2" bis_skin_checked="1">
+                        <button onclick="openStoreConfigModal()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-xs rounded-xl border border-slate-700 font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-gear"></i> Configurar Perfil
+                        </button>
+                        <button onclick="logoutBusinessStore()" class="px-3 py-2 bg-rose-900/40 hover:bg-rose-800/50 text-rose-300 text-xs rounded-xl border border-rose-800/40 font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-right-from-bracket"></i> Salir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Media Upload Form (Subir Fotos / Videos Cortos) -->
+                <div class="glass-panel p-5 rounded-2xl space-y-4" bis_skin_checked="1">
+                    <h3 class="font-bold text-sm text-white border-b border-slate-800 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up text-pink-400"></i> Publicar Nuevo Artículo / Promoción
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" bis_skin_checked="1">
+                        <!-- File Upload Input & Camera Options -->
+                        <div class="space-y-3" bis_skin_checked="1">
+                            <label class="block text-xs text-slate-400 font-medium">Cargar desde Archivos o Tomar Foto con la Cámara</label>
+
+                            <div class="grid grid-cols-2 gap-2" bis_skin_checked="1">
+                                <!-- Option 1: Device Gallery / Files -->
+                                <div bis_skin_checked="1">
+                                    <label class="cursor-pointer w-full py-2.5 px-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition text-center shadow">
+                                        <i class="fa-solid fa-folder-open"></i> Galería / Archivos
+                                        <input type="file" id="bizFileInput" accept="image/*,video/*" onchange="previewSelectedMedia(event)" class="hidden">
+                                    </label>
+                                </div>
+                                <!-- Option 2: Direct Smartphone Camera Capture -->
+                                <div bis_skin_checked="1">
+                                    <label class="cursor-pointer w-full py-2.5 px-3 bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition text-center shadow">
+                                        <i class="fa-solid fa-camera"></i> Tomar Foto
+                                        <input type="file" id="bizCameraInput" accept="image/*" capture="environment" onchange="previewSelectedMedia(event)" class="hidden">
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Preview Box -->
+                            <div id="mediaPreviewBox" class="h-40 bg-slate-900 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden relative" bis_skin_checked="1">
+                                <span class="text-xs text-slate-600">Vista Previa de Foto o Archivo</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Form Fields -->
+                        <div class="space-y-3" bis_skin_checked="1">
+                            <div bis_skin_checked="1">
+                                <label class="block text-xs text-slate-400 mb-1">Título del Artículo / Producto</label>
+                                <input type="text" id="bizProdTitle" placeholder="Ej. Promoción Calzado Deportivo" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+
+                            <div bis_skin_checked="1">
+                                <label class="block text-xs text-slate-400 mb-1">Categoría / Catálogo</label>
+                                <div class="flex items-center gap-2" bis_skin_checked="1">
+                                    <select id="bizProdCatalogSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"><option value="General">General</option><option value="Ropa y Moda">Ropa y Moda</option><option value="Calzado">Calzado</option><option value="Comida y Restaurante">Comida y Restaurante</option><option value="Tecnología">Tecnología</option></select>
+                                    <button onclick="promptNewCatalog()" class="px-2.5 py-2 bg-slate-800 text-xs font-bold rounded-xl border border-slate-700 text-slate-300 hover:text-white" title="Añadir nuevo catálogo">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2" bis_skin_checked="1">
+                                <div bis_skin_checked="1">
+                                    <label class="block text-xs text-slate-400 mb-1">Precio Normal ($)</label>
+                                    <input type="number" id="bizProdPrice" placeholder="50000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                                <div bis_skin_checked="1">
+                                    <label class="block text-xs text-slate-400 mb-1">Precio Promo ($)</label>
+                                    <input type="number" id="bizProdPromoPrice" placeholder="35000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 pt-1" bis_skin_checked="1">
+                                <input type="checkbox" id="bizIsPromoCheck" class="w-4 h-4 rounded bg-slate-900 border-slate-700 text-pink-500 focus:ring-pink-500">
+                                <label for="bizIsPromoCheck" class="text-xs text-pink-400 font-bold flex items-center justify-between w-full cursor-pointer">
+                                    <span class="flex items-center gap-1">
+                                        <i class="fa-solid fa-fire"></i> Marcar como "PROMO DEL DÍA" (Sale Primero)
+                                    </span>
+                                    <span id="dailyPromoCounterBadge" class="text-[10px] bg-pink-950/80 text-pink-300 border border-pink-500/30 px-2 py-0.5 rounded-full font-bold">
+                                        Promos hoy: 0/2
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button onclick="publishArticle()" class="w-full py-2.5 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Publicar en NEXIO.NET
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Published Items List -->
+                <div class="glass-panel p-5 rounded-2xl space-y-4" bis_skin_checked="1">
+                    <h3 class="font-bold text-sm text-white border-b border-slate-800 pb-2">Mis Artículos Publicados</h3>
+                    <div id="bizMyArticlesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" bis_skin_checked="1">
+                        <!-- Dynamic items published by this business -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             3. ADMINISTRATOR PANEL VIEW (PANEL ADMINISTRADOR)
+             ==================================================================== -->
+        
+    </main>
+
+    <!-- Modal: Business Profile Configuration -->
+    <div id="storeConfigModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" bis_skin_checked="1">
+        <div class="glass-panel p-6 rounded-2xl max-w-md w-full space-y-4 border border-slate-700" bis_skin_checked="1">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2" bis_skin_checked="1">
+                <h3 class="font-bold text-white text-sm">Configuración de Mi Tienda</h3>
+                <button onclick="closeStoreConfigModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="space-y-3" bis_skin_checked="1">
+                <div bis_skin_checked="1">
+                    <label class="block text-xs text-slate-400 mb-1">Logo de la Tienda (Subir desde Dispositivo)</label>
+                    <input type="file" id="modalLogoFileInput" accept="image/*" onchange="uploadStoreLogo(event)" class="block w-full text-xs text-slate-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-cyan-600 file:text-white cursor-pointer bg-slate-900 rounded-xl border border-slate-800">
+                </div>
+
+                <div bis_skin_checked="1">
+                    <label class="block text-xs text-slate-400 mb-1">Número de WhatsApp Directo de Ventas</label>
+                    <input type="text" id="modalWhatsappInput" placeholder="Ej. 573012345678" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                </div>
+
+                <div bis_skin_checked="1">
+                    <label class="block text-xs text-slate-400 mb-1">Zona / Municipio Principal</label>
+                    <select id="modalZoneSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
+                        <!-- Dynamic Zones -->
+                    </select>
+                </div>
+
+                <button onclick="saveStoreConfig()" class="w-full py-2 bg-gradient-to-r from-pink-500 to-indigo-600 text-white font-bold text-xs rounded-xl">
+                    Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-500">
+        <p>NEXIO.NET Plataforma Comercial © 2026 - Sahagún, Cereté, Montería, Lorica y Toda la Región.</p>
+    </footer>
+
+    <!-- Application Logic Script -->
+    <script>
+        /* =============================================================
+           NEXIO.NET REAL-TIME STATE & APPLICATION CONTROLLER
+           ============================================================= */
+
+        const ADMIN_CREDENTIALS = {
+            user: "NEXIO.NET",
+            pass: "1069464411Ezio",
+            phone: "3006158409",
+            email: "ezfermoho@gmail.com"
+        };
+
+        let isAdminAuthenticated = sessionStorage.getItem('nexio_admin_auth') === 'true';
+        let generatedAdmin2FACode = null;
+
+        // Web Audio API Synthesizer Fallback Engine
+        let audioCtx = null;
+        let synthInterval = null;
+        let isSynthActive = false;
+
+        function playSynthChord(type = 'lofi') {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) return;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            let freqs = [261.63, 329.63, 392.00, 493.88]; // C maj7 default
+            if (type === 'festive') freqs = [293.66, 369.99, 440.00, 554.37]; // D maj7 rhythm
+            if (type === 'lounge') freqs = [220.00, 261.63, 329.63, 392.00]; // A min7 lounge
+            if (type === 'electro') freqs = [174.61, 220.00, 261.63, 329.63]; // F maj7 punchy
+
+            freqs.forEach((freq, idx) => {
+                try {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = (type === 'electro' || type === 'festive') ? 'triangle' : 'sine';
+                    osc.frequency.setValueAtTime(freq + (Math.random() * 2 - 1), audioCtx.currentTime);
+                    
+                    gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.05, audioCtx.currentTime + 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.5);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.start(audioCtx.currentTime + (idx * 0.15));
+                    osc.stop(audioCtx.currentTime + 3.8);
+                } catch (e) {
+                    console.warn("Synth audio note warning:", e);
+                }
+            });
+        }
+
+        function startSynthMusic(mode = 'lofi') {
+            stopSynthMusic();
+            isSynthActive = true;
+            playSynthChord(mode);
+            synthInterval = setInterval(() => {
+                if (isSynthActive) playSynthChord(mode);
+            }, 3600);
+        }
+
+        function stopSynthMusic() {
+            isSynthActive = false;
+            if (synthInterval) {
+                clearInterval(synthInterval);
+                synthInterval = null;
+            }
+        }
+
+        const DEFAULT_ZONES = ["Sahagún", "Cereté", "Montería", "Lorica", "Chinú"];
+        const DEFAULT_PRESET_THEMES = {
+            navidad: { title: "🎄 ¡Especial Navideño & Promociones de Fin de Año!", gif: "https://media.giphy.com/media/26tP3mh3S369xGpx0/giphy.gif" },
+            carnaval: { title: "🎭 ¡Gran Especial de Carnavales & Ofertas!", gif: "https://media.giphy.com/media/l2JHRhAtnJSDNJ2py/giphy.gif" },
+            amor: { title: "❤️ Especial del Mes del Amor y la Amistad", gif: "https://media.giphy.com/media/l41K3o5T3ho3B8Z68/giphy.gif" },
+            halloween: { title: "🎃 Ofertas Monstruosas de Temporada", gif: "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" },
+            ofertas: { title: "⚡ ¡SUPER VIERNES DE DESCUENTOS EN NEXIO.NET!", gif: "https://media.giphy.com/media/l0HlQXkh1wx1RjtUA/giphy.gif" }
+        };
+
+        const PRESET_AUDIO_TRACKS = {
+            lofi: { name: "Lofi Chill Lounge", url: "https://upload.wikimedia.org/wikipedia/commons/3/30/Lofi_track.ogg", synthMode: "lofi" },
+            festive: { name: "Fiesta & Caribe Beats", url: "https://upload.wikimedia.org/wikipedia/commons/6/65/Samba_rhythm.ogg", synthMode: "festive" },
+            lounge: { name: "Smooth Jazz Ambient", url: "https://upload.wikimedia.org/wikipedia/commons/3/30/Lofi_track.ogg", synthMode: "lounge" },
+            electro: { name: "Electro Pop Energy", url: "", synthMode: "electro" },
+            synth: { name: "Sintetizador Relajante NEXIO", url: "", synthMode: "synth" }
+        };
+
+        // Application State
+        let state = {
+            zones: JSON.parse(localStorage.getItem('nexio_zones')) || DEFAULT_ZONES,
+            selectedZone: "ALL",
+            selectedCategory: "ALL",
+            selectedStoreFilter: null, // Holds store ID or store name when filtered exclusively
+            announcement: localStorage.getItem('nexio_announcement') || "¡Atención! Todas las tiendas registradas tienen envíos con descuento en Sahagún, Cereté, Montería y Lorica.",
+            activeTheme: JSON.parse(localStorage.getItem('nexio_theme')) || DEFAULT_PRESET_THEMES.navidad,
+            audioConfig: JSON.parse(localStorage.getItem('nexio_audio_config')) || {
+                genre: "lofi",
+                trackName: "Lofi Chill Lounge",
+                customUrl: "https://upload.wikimedia.org/wikipedia/commons/3/30/Lofi_track.ogg",
+                synthMode: "lofi"
+            },
+            supportPhone: localStorage.getItem('nexio_support_phone') || "573001234567",
+            accounts: JSON.parse(localStorage.getItem('nexio_accounts')) || [
+                { id: "1", name: "Modas Sahagún", code: "NEX-9988-15D", days: 30, logo: "https://placehold.co/100x100/ec4899/ffffff?text=Modas", whatsapp: "573001112233", zone: "Sahagún", status: "active" },
+                { id: "2", name: "TecnoCereté", code: "NEX-5544-30D", days: 15, logo: "https://placehold.co/100x100/06b6d4/ffffff?text=Tecno", whatsapp: "573002223344", zone: "Cereté", status: "active" }
+            ],
+            products: JSON.parse(localStorage.getItem('nexio_products')) || [
+                {
+                    id: "p1",
+                    storeId: "1",
+                    storeName: "Modas Sahagún",
+                    storeLogo: "https://placehold.co/100x100/ec4899/ffffff?text=Modas",
+                    storeWhatsapp: "573001112233",
+                    title: "Zapatillas Urbanas Edición Limitada",
+                    catalog: "Calzado",
+                    price: 120000,
+                    promoPrice: 85000,
+                    isPromo: true,
+                    mediaUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+                    mediaType: "image",
+                    zone: "Sahagún",
+                    createdAt: Date.now() - 1000000
+                },
+                {
+                    id: "p2",
+                    storeId: "2",
+                    storeName: "TecnoCereté",
+                    storeLogo: "https://placehold.co/100x100/06b6d4/ffffff?text=Tecno",
+                    storeWhatsapp: "573002223344",
+                    title: "Audífonos Inalámbricos Bluetooth Pro",
+                    catalog: "Tecnología",
+                    price: 90000,
+                    promoPrice: 65000,
+                    isPromo: true,
+                    mediaUrl: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+                    mediaType: "image",
+                    zone: "Cereté",
+                    createdAt: Date.now() - 500000
+                }
+            ],
+            catalogs: JSON.parse(localStorage.getItem('nexio_catalogs')) || ["General", "Ropa y Moda", "Calzado", "Comida y Restaurante", "Tecnología"]
+        };
+
+        let currentActiveBiz = JSON.parse(localStorage.getItem('nexio_active_biz')) || null;
+        let selectedUploadDataUrl = null;
+        let selectedUploadType = 'image';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initApp();
+            
+            // Audio player resilience error trap
+            const bgAudio = document.getElementById('bgAudioPlayer');
+            if (bgAudio) {
+                bgAudio.addEventListener('error', (e) => {
+                    console.warn("Audio file loading error handled gracefully:", e);
+                    if (isAudioPlaying) {
+                        startSynthMusic('lofi');
+                    }
+                });
+            }
+        });
+
+        function initApp() {
+            renderHeaderThemeAndAnnouncement();
+            renderZoneFilterButtons();
+            renderCatalogSelects();
+            renderClientFeed();
+            checkActiveBusinessState();
+            updateSupportLinks();
+        }
+
+        function saveState() {
+            localStorage.setItem('nexio_zones', JSON.stringify(state.zones));
+            localStorage.setItem('nexio_announcement', state.announcement);
+            localStorage.setItem('nexio_theme', JSON.stringify(state.activeTheme));
+            localStorage.setItem('nexio_audio_config', JSON.stringify(state.audioConfig));
+            localStorage.setItem('nexio_support_phone', state.supportPhone);
+            localStorage.setItem('nexio_accounts', JSON.stringify(state.accounts));
+            localStorage.setItem('nexio_products', JSON.stringify(state.products));
+            localStorage.setItem('nexio_catalogs', JSON.stringify(state.catalogs));
+        }
+
+        function switchRole(role) {
+            const clientView = document.getElementById('clientView');
+            const businessView = document.getElementById('businessView');
+
+            if (clientView) clientView.classList.add('hidden');
+            if (businessView) businessView.classList.add('hidden');
+
+            const clientBtn = document.getElementById('btnRoleClient');
+            const businessBtn = document.getElementById('btnRoleBusiness');
+
+            if (clientBtn) clientBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1.5";
+            if (businessBtn) businessBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1.5";
+
+            if (role === 'client') {
+                if (clientView) clientView.classList.remove('hidden');
+                if (clientBtn) clientBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-pink-600 text-white shadow-md";
+                renderClientFeed();
+            } else if (role === 'business') {
+                if (businessView) businessView.classList.remove('hidden');
+                if (businessBtn) businessBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-pink-600 text-white shadow-md";
+                checkActiveBusinessState();
+            }
+        }
+
+        function openAdminAuthModal() {
+            document.getElementById('adminAuthUser').value = "";
+            document.getElementById('adminAuthPass').value = "";
+            document.getElementById('adminAuthError').classList.add('hidden');
+            document.getElementById('adminCodeError').classList.add('hidden');
+            document.getElementById('adminStepCredentials').classList.remove('hidden');
+            document.getElementById('adminStepVerification').classList.add('hidden');
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function submitAdminCredentials() {
+            const userInput = document.getElementById('adminAuthUser').value.trim();
+            const passInput = document.getElementById('adminAuthPass').value.trim();
+            const method = document.getElementById('adminAuth2FAMethod').value;
+            const err = document.getElementById('adminAuthError');
+
+            if (userInput !== ADMIN_CREDENTIALS.user || passInput !== ADMIN_CREDENTIALS.pass) {
+                err.innerText = "Usuario o contraseña incorrectos para el Panel Admin.";
+                err.classList.remove('hidden');
+                return;
+            }
+
+            err.classList.add('hidden');
+
+            // Generate 6-digit random code
+            generatedAdmin2FACode = Math.floor(100000 + Math.random() * 900000).toString();
+
+            const destText = method === 'phone' ? `📱 SMS al teléfono: ${ADMIN_CREDENTIALS.phone}` : `✉️ Correo enviado a: ${ADMIN_CREDENTIALS.email}`;
+            document.getElementById('admin2FADestinationText').innerText = destText;
+            document.getElementById('adminSimulatedCodeDisplay').innerText = generatedAdmin2FACode;
+
+            document.getElementById('adminStepCredentials').classList.add('hidden');
+            document.getElementById('adminStepVerification').classList.remove('hidden');
+        }
+
+        function verifyAdminCode() {
+            const inputCode = document.getElementById('adminAuthCodeInput').value.trim();
+            const err = document.getElementById('adminCodeError');
+
+            if (inputCode !== generatedAdmin2FACode) {
+                err.innerText = "Código de verificación incorrecto.";
+                err.classList.remove('hidden');
+                return;
+            }
+
+            err.classList.add('hidden');
+            isAdminAuthenticated = true;
+            sessionStorage.setItem('nexio_admin_auth', 'true');
+            closeAdminAuthModal();
+
+            // Grant access to Admin Panel
+            switchRole('admin');
+        }
+
+        function logoutAdmin() {
+            isAdminAuthenticated = false;
+            sessionStorage.removeItem('nexio_admin_auth');
+            switchRole('client');
+        }
+
+        let isAudioPlaying = false;
+        function toggleAudioPlayback() {
+            const audio = document.getElementById('bgAudioPlayer');
+            const label = document.getElementById('audioLabel');
+            const icon = document.getElementById('audioIcon');
+            const trackBadge = document.getElementById('currentTrackBadge');
+
+            if (trackBadge) {
+                trackBadge.innerText = state.audioConfig.trackName || "Música NEXIO";
+            }
+
+            if (isAudioPlaying) {
+                isAudioPlaying = false;
+                audio.pause();
+                stopSynthMusic();
+                label.innerText = "Música: Pausa";
+                icon.className = "fa-solid fa-music text-indigo-400";
+            } else {
+                isAudioPlaying = true;
+                label.innerText = "Música: Sonando";
+                icon.className = "fa-solid fa-compact-disc fa-spin text-pink-400";
+                
+                if (state.audioConfig.customUrl) {
+                    audio.src = state.audioConfig.customUrl;
+                    audio.play().catch(e => {
+                        console.warn("Audio play fallback to synth mode:", e);
+                        startSynthMusic(state.audioConfig.synthMode || 'lofi');
+                    });
+                } else {
+                    startSynthMusic(state.audioConfig.synthMode || 'lofi');
+                }
+            }
+        }
+
+        let isMobileSim = false;
+        function toggleMobileSim() {
+            const container = document.getElementById('appContainer');
+            const btnText = document.getElementById('simToggleText');
+            if (isMobileSim) {
+                container.classList.remove('sim-mobile-frame');
+                btnText.innerText = "Vista Celular";
+                isMobileSim = false;
+            } else {
+                container.classList.add('sim-mobile-frame');
+                btnText.innerText = "Vista Escritorio";
+                isMobileSim = true;
+            }
+        }
+
+        function renderHeaderThemeAndAnnouncement() {
+            document.getElementById('seasonalThemeGif').src = state.activeTheme.gif;
+            document.getElementById('seasonalThemeTitle').innerText = state.activeTheme.title;
+            document.getElementById('globalAnnouncementText').innerText = state.announcement;
+            const adminAnnouncementInput = document.getElementById('adminAnnouncementInput');
+            const adminThemeTitleInput = document.getElementById('adminThemeTitleInput');
+            const adminSupportPhone = document.getElementById('adminSupportPhone');
+
+            if (adminAnnouncementInput) adminAnnouncementInput.value = state.announcement;
+            if (adminThemeTitleInput) adminThemeTitleInput.value = state.activeTheme.title;
+            if (adminSupportPhone) adminSupportPhone.value = state.supportPhone;
+
+            if (document.getElementById('adminAudioGenreSelect')) {
+                document.getElementById('adminAudioGenreSelect').value = state.audioConfig.genre || 'lofi';
+                document.getElementById('adminTrackTitleInput').value = state.audioConfig.trackName || 'Música NEXIO';
+                document.getElementById('adminAudioUrlInput').value = state.audioConfig.customUrl || '';
+            }
+            if (document.getElementById('currentTrackBadge')) {
+                document.getElementById('currentTrackBadge').innerText = state.audioConfig.trackName || 'Música NEXIO';
+            }
+        }
+
+        /* =============================================================
+           CLIENT STORE FILTERING LOGIC (NAVIGATE TO STORE CATALOG)
+           ============================================================= */
+
+        function filterByStore(storeIdentifier) {
+            state.selectedStoreFilter = storeIdentifier;
+            renderClientFeed();
+            
+            // Scroll smoothly to top of feed
+            const banner = document.getElementById('storeCatalogBanner');
+            if (banner) {
+                banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function clearStoreFilter() {
+            state.selectedStoreFilter = null;
+            renderClientFeed();
+        }
+
+        /* =============================================================
+           ADMIN AUDIO CONTROL MANAGEMENT
+           ============================================================= */
+
+        function handlePresetAudioSelect() {
+            const genre = document.getElementById('adminAudioGenreSelect').value;
+            const preset = PRESET_AUDIO_TRACKS[genre];
+            if (preset) {
+                document.getElementById('adminTrackTitleInput').value = preset.name;
+                document.getElementById('adminAudioUrlInput').value = preset.url;
+            }
+        }
+
+        function uploadCustomAudioFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('adminAudioUrlInput').value = e.target.result;
+                if (!document.getElementById('adminTrackTitleInput').value) {
+                    document.getElementById('adminTrackTitleInput').value = file.name.replace(/\.[^/.]+$/, "");
+                }
+                alert("¡Archivo de audio cargado correctamente! Haz clic en 'Publicar Música' para aplicarlo a la tienda.");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function previewAdminAudio() {
+            const url = document.getElementById('adminAudioUrlInput').value.trim();
+            const genre = document.getElementById('adminAudioGenreSelect').value;
+            const audio = document.getElementById('bgAudioPlayer');
+
+            if (url) {
+                audio.src = url;
+                audio.play().catch(() => startSynthMusic(genre));
+            } else {
+                startSynthMusic(genre);
+            }
+            alert("▶️ Reproduciendo prueba de audio...");
+        }
+
+        function saveAdminAudioSettings() {
+            const genre = document.getElementById('adminAudioGenreSelect').value;
+            const trackName = document.getElementById('adminTrackTitleInput').value.trim() || "Música de la Tienda";
+            const customUrl = document.getElementById('adminAudioUrlInput').value.trim();
+
+            state.audioConfig = {
+                genre: genre,
+                trackName: trackName,
+                customUrl: customUrl,
+                synthMode: PRESET_AUDIO_TRACKS[genre] ? PRESET_AUDIO_TRACKS[genre].synthMode : 'lofi'
+            };
+
+            saveState();
+
+            if (isAudioPlaying) {
+                isAudioPlaying = false;
+                toggleAudioPlayback();
+            } else {
+                renderHeaderThemeAndAnnouncement();
+            }
+
+            alert("🎶 ¡Música y ambientación de la tienda actualizada con éxito!");
+        }
+
+        function updateSupportLinks() {
+            const link = document.getElementById('supportWhatsappLink');
+            if (link) {
+                link.href = `https://wa.me/${state.supportPhone}?text=${encodeURIComponent('Hola Soporte NEXIO.NET, requiero información para mi negocio.')}`;
+            }
+        }
+
+        function renderZoneFilterButtons() {
+            const container = document.getElementById('zoneFilterContainer');
+            let html = `
+                <button onclick="filterByZone('ALL')" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${state.selectedZone === 'ALL' ? 'bg-pink-600 text-white shadow' : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'}">
+                    <i class="fa-solid fa-location-dot"></i> Todas las Zonas
+                </button>
+            `;
+            state.zones.forEach(zone => {
+                html += `
+                    <button onclick="filterByZone('${zone}')" class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${state.selectedZone === zone ? 'bg-pink-600 text-white shadow' : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'}">
+                        ${zone}
+                    </button>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function filterByZone(zone) {
+            state.selectedZone = zone;
+            renderZoneFilterButtons();
+            renderClientFeed();
+        }
+
+        function renderCatalogSelects() {
+            const clientSelect = document.getElementById('clientCategorySelect');
+            const bizSelect = document.getElementById('bizProdCatalogSelect');
+
+            let optionsHtml = `<option value="ALL">Todas las Categorías</option>`;
+            let bizOptionsHtml = ``;
+
+            state.catalogs.forEach(cat => {
+                optionsHtml += `<option value="${cat}">${cat}</option>`;
+                bizOptionsHtml += `<option value="${cat}">${cat}</option>`;
+            });
+
+            if (clientSelect) clientSelect.innerHTML = optionsHtml;
+            if (bizSelect) bizSelect.innerHTML = bizOptionsHtml;
+        }
+
+        function renderClientFeed() {
+            const catSelect = document.getElementById('clientCategorySelect');
+            if (catSelect) state.selectedCategory = catSelect.value;
+
+            // Handle Store Personal Catalog Banner visibility
+            const storeBanner = document.getElementById('storeCatalogBanner');
+            if (state.selectedStoreFilter) {
+                // Find account details or infer from products
+                const matchedStore = state.accounts.find(a => a.id === state.selectedStoreFilter || a.name === state.selectedStoreFilter) || 
+                                     state.products.find(p => p.storeId === state.selectedStoreFilter || p.storeName === state.selectedStoreFilter);
+
+                if (matchedStore) {
+                    const storeName = matchedStore.name || matchedStore.storeName || "Tienda";
+                    const storeLogo = matchedStore.logo || matchedStore.storeLogo || "https://placehold.co/100x100/1e293b/00f2fe?text=LOGO";
+                    const storeZone = matchedStore.zone || "Sahagún";
+                    const storeWa = matchedStore.whatsapp || matchedStore.storeWhatsapp || state.supportPhone;
+
+                    document.getElementById('storeBannerLogo').src = storeLogo;
+                    document.getElementById('storeBannerName').innerText = storeName;
+                    document.getElementById('storeBannerZone').innerText = "📍 " + storeZone;
+                    document.getElementById('storeBannerWhatsappBtn').href = `https://wa.me/${storeWa}?text=${encodeURIComponent('Hola ' + storeName + ', vi tu catálogo completo en NEXIO.NET!')}`;
+                    document.getElementById('feedMainTitle').innerHTML = `<i class="fa-solid fa-store text-cyan-400"></i> Catálogo Exclusivo de ${storeName}`;
+
+                    storeBanner.classList.remove('hidden');
+                }
+            } else {
+                storeBanner.classList.add('hidden');
+                document.getElementById('feedMainTitle').innerHTML = `<i class="fa-solid fa-clock-rotate-left text-pink-400"></i> Publicaciones Recientes`;
+            }
+
+            // Sort products by newest first (CreatedAt Timestamp Descending)
+            let sortedProducts = [...state.products].sort((a, b) => b.createdAt - a.createdAt);
+
+            // Filter by Store if selected
+            if (state.selectedStoreFilter) {
+                sortedProducts = sortedProducts.filter(p => p.storeId === state.selectedStoreFilter || p.storeName === state.selectedStoreFilter);
+            }
+
+            // Filter by zone and category
+            if (state.selectedZone !== "ALL") {
+                sortedProducts = sortedProducts.filter(p => p.zone === state.selectedZone);
+            }
+            if (state.selectedCategory !== "ALL") {
+                sortedProducts = sortedProducts.filter(p => p.catalog === state.selectedCategory);
+            }
+
+            // Render Promos del Día (Hot Offers)
+            const promosGrid = document.getElementById('promosListGrid');
+            const promoItems = sortedProducts.filter(p => p.isPromo);
+
+            if (promoItems.length === 0) {
+                promosGrid.innerHTML = `
+                    <div class="col-span-full text-center py-6 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag text-slate-600 text-lg mb-1 block"></i>
+                        No hay ofertas especiales activas en este momento para los filtros aplicados.
+                    </div>
+                `;
+            } else {
+                let promoHtml = "";
+                promoItems.forEach(item => {
+                    const discount = item.price ? Math.round(((item.price - item.promoPrice) / item.price) * 100) : 0;
+                    promoHtml += `
+                        <div class="glass-card rounded-xl overflow-hidden border border-pink-500/30 flex flex-col justify-between group hover:border-pink-500 transition duration-300">
+                            <div class="relative h-40 bg-slate-900 overflow-hidden">
+                                ${item.mediaType === 'video' ? `
+                                    <video src="${item.mediaUrl}" controls class="w-full h-full object-cover"></video>
+                                ` : `
+                                    <img src="${item.mediaUrl}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                `}
+                                <span class="absolute top-2 left-2 px-2 py-0.5 bg-rose-600 text-white font-black text-[10px] rounded-md shadow">
+                                    ${discount}% OFF
+                                </span>
+                                
+                                <!-- Clickable Store Logo/Name Badge to filter by store -->
+                                <button onclick="filterByStore('${item.storeId}')" class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-slate-950/85 hover:bg-pink-950/90 backdrop-blur px-2 py-1 rounded-lg border border-white/10 transition cursor-pointer" title="Ver catálogo de esta tienda">
+                                    <div class="flex items-center gap-1.5 overflow-hidden">
+                                        <img src="${item.storeLogo}" class="w-4 h-4 rounded-full object-cover border border-cyan-400">
+                                        <span class="text-[11px] font-bold text-white truncate">${item.storeName}</span>
+                                    </div>
+                                    <span class="text-[10px] text-cyan-400 font-semibold"><i class="fa-solid fa-eye text-[9px]"></i> Ver Tienda</span>
+                                </button>
+                            </div>
+                            <div class="p-3 space-y-2">
+                                <h4 class="font-bold text-xs text-white line-clamp-1">${item.title}</h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-extrabold text-pink-400">$${Number(item.promoPrice).toLocaleString()}</span>
+                                    ${item.price ? `<span class="text-[11px] text-slate-500 line-through">$${Number(item.price).toLocaleString()}</span>` : ''}
+                                </div>
+                                <a href="https://wa.me/${item.storeWhatsapp}?text=${encodeURIComponent('Hola ' + item.storeName + ', vi en NEXIO.NET la promo: ' + item.title)}" target="_blank" class="w-full py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+                promosGrid.innerHTML = promoHtml;
+            }
+
+            // Render Main Chronological Media Grid
+            const mainGrid = document.getElementById('clientMediaGrid');
+            document.getElementById('feedCountLabel').innerText = `${sortedProducts.length} publicación(es) disponibles`;
+
+            if (sortedProducts.length === 0) {
+                mainGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12 glass-panel rounded-2xl space-y-2">
+                        <i class="fa-regular fa-folder-open text-3xl text-slate-600"></i>
+                        <p class="text-sm text-slate-400 font-medium">No se encontraron artículos en esta categoría o tienda.</p>
+                        ${state.selectedStoreFilter ? `<button onclick="clearStoreFilter()" class="mt-2 px-3 py-1.5 bg-indigo-600 text-white text-xs font-bold rounded-xl">Ver Todos los Productos</button>` : ''}
+                    </div>
+                `;
+            } else {
+                let feedHtml = "";
+                sortedProducts.forEach(product => {
+                    feedHtml += `
+                        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition duration-300 flex flex-col justify-between group">
+                            <!-- Watermark Logo Overlay Container -->
+                            <div class="relative w-full h-48 bg-slate-950 overflow-hidden flex items-center justify-center">
+                                ${product.mediaType === 'video' ? `
+                                    <video src="${product.mediaUrl}" controls class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'p-4 text-slate-500 text-xs text-center\'>Video no disponible</div>'"></video>
+                                ` : `
+                                    <img src="${product.mediaUrl}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/00f2fe?text=Imagen+No+Disponible'">
+                                `}
+
+                                <!-- Clickable Store Logo Badge Watermark on top of image to open personal store catalog -->
+                                <button onclick="filterByStore('${product.storeId}')" class="absolute top-2 right-2 flex items-center gap-1.5 bg-slate-950/85 hover:bg-pink-900/90 backdrop-blur px-2 py-1 rounded-xl border border-white/10 shadow transition cursor-pointer group/badge" title="Toca para ir al catálogo completo de ${product.storeName}">
+                                    <img src="${product.storeLogo}" alt="Logo" class="w-5 h-5 rounded-full object-cover border border-cyan-400 group-hover/badge:scale-110 transition-transform">
+                                    <span class="text-[10px] font-bold text-white truncate max-w-[90px]">${product.storeName}</span>
+                                    <i class="fa-solid fa-chevron-right text-[8px] text-pink-400 ml-0.5"></i>
+                                </button>
+
+                                <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-slate-900/90 text-slate-300 text-[10px] font-medium rounded-md">
+                                    📂 ${product.catalog}
+                                </span>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="p-3.5 space-y-2 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-bold text-xs text-white line-clamp-2">${product.title}</h4>
+                                    <p class="text-[10px] text-slate-400 mt-1">📍 ${product.zone}</p>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-800/80 space-y-2">
+                                    <div class="flex items-baseline justify-between">
+                                        <span class="text-xs text-slate-400">Precio:</span>
+                                        <span class="text-sm font-black text-cyan-400">$${Number(product.promoPrice || product.price).toLocaleString()}</span>
+                                    </div>
+
+                                    <a href="https://wa.me/${product.storeWhatsapp}?text=${encodeURIComponent('Hola ' + product.storeName + ', estoy interesado en: ' + product.title)}" target="_blank" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                                        <i class="fa-brands fa-whatsapp"></i> Contactar Negocio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                mainGrid.innerHTML = feedHtml;
+            }
+
+            // Render Stores Directory with Click-to-Catalog event
+            const directoryList = document.getElementById('storesDirectoryList');
+            let dirHtml = "";
+            state.accounts.forEach(store => {
+                const isSelected = state.selectedStoreFilter === store.id || state.selectedStoreFilter === store.name;
+                dirHtml += `
+                    <div onclick="filterByStore('${store.id}')" class="p-2.5 rounded-xl ${isSelected ? 'bg-indigo-900/60 border-2 border-cyan-400 shadow-md' : 'bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50'} flex items-center justify-between gap-2 transition cursor-pointer group">
+                        <div class="flex items-center gap-2.5 overflow-hidden">
+                            <img src="${store.logo || 'https://placehold.co/100x100/1e293b/00f2fe?text=LOGO'}" class="w-8 h-8 rounded-lg object-cover shrink-0 border border-slate-700 group-hover:scale-105 transition-transform">
+                            <div class="truncate">
+                                <h5 class="text-xs font-bold text-white truncate ${isSelected ? 'text-cyan-300' : ''}">${store.name}</h5>
+                                <span class="text-[10px] text-slate-400">📍 ${store.zone}</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-1 bg-indigo-600/30 text-indigo-300 rounded-lg group-hover:bg-pink-600 group-hover:text-white font-bold transition">
+                            Catálogo
+                        </span>
+                    </div>
+                `;
+            });
+            directoryList.innerHTML = dirHtml || '<p class="text-xs text-slate-500 text-center">No hay tiendas registradas.</p>';
+        }
+
+        /* =============================================================
+           BUSINESS STORE MANAGEMENT & UPLOADS
+           ============================================================= */
+
+        function checkActiveBusinessState() {
+            const authBox = document.getElementById('businessAuthContainer');
+            const dashBox = document.getElementById('businessDashboard');
+
+            if (currentActiveBiz) {
+                authBox.classList.add('hidden');
+                dashBox.classList.remove('hidden');
+
+                document.getElementById('activeBizNameDisplay').innerText = currentActiveBiz.name;
+                document.getElementById('activeBizLogoDisplay').src = currentActiveBiz.logo || 'https://placehold.co/100x100/1e293b/00f2fe?text=LOGO';
+                document.getElementById('activeBizZoneBadge').innerText = "📍 " + (currentActiveBiz.zone || "Sahagún");
+                document.getElementById('activeBizDaysLeft').innerText = `${currentActiveBiz.days} días de servicio`;
+
+                renderBusinessMyArticles();
+                updateDailyPromoBadge();
+            } else {
+                authBox.classList.remove('hidden');
+                dashBox.classList.add('hidden');
+            }
+        }
+
+        function updateDailyPromoBadge() {
+            if (!currentActiveBiz) return;
+            const badge = document.getElementById('dailyPromoCounterBadge');
+            if (!badge) return;
+
+            const todayStr = new Date().toDateString();
+            const todayPromosCount = state.products.filter(p => 
+                p.storeId === currentActiveBiz.id && 
+                p.isPromo && 
+                new Date(p.createdAt).toDateString() === todayStr
+            ).length;
+
+            badge.innerText = `Promos hoy: ${todayPromosCount}/2`;
+            if (todayPromosCount >= 2) {
+                badge.className = "text-[10px] bg-amber-950/80 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full font-bold animate-pulse";
+            } else {
+                badge.className = "text-[10px] bg-pink-950/80 text-pink-300 border border-pink-500/30 px-2 py-0.5 rounded-full font-bold";
+            }
+        }
+
+        function loginBusinessStore() {
+            const name = document.getElementById('bizLoginName').value.trim();
+            const code = document.getElementById('bizLoginCode').value.trim().toUpperCase();
+            const err = document.getElementById('bizLoginError');
+
+            if (!name || !code) {
+                err.innerText = "Ingresa el nombre y el código de activación.";
+                err.classList.remove('hidden');
+                return;
+            }
+
+            const account = state.accounts.find(a => a.code === code);
+            if (!account) {
+                err.innerText = "Código de activación inválido o caducado.";
+                err.classList.remove('hidden');
+                return;
+            }
+
+            account.name = name;
+            currentActiveBiz = account;
+            localStorage.setItem('nexio_active_biz', JSON.stringify(currentActiveBiz));
+            saveState();
+
+            err.classList.add('hidden');
+            checkActiveBusinessState();
+        }
+
+        function logoutBusinessStore() {
+            currentActiveBiz = null;
+            localStorage.removeItem('nexio_active_biz');
+            checkActiveBusinessState();
+        }
+
+        function previewSelectedMedia(event) {
+            const file = event.target.files[0];
+            const box = document.getElementById('mediaPreviewBox');
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                selectedUploadDataUrl = e.target.result;
+                if (file.type.startsWith('video/')) {
+                    selectedUploadType = 'video';
+                    box.innerHTML = `<video src="${selectedUploadDataUrl}" controls class="w-full h-full object-cover rounded-xl"></video>`;
+                } else {
+                    selectedUploadType = 'image';
+                    box.innerHTML = `<img src="${selectedUploadDataUrl}" class="w-full h-full object-cover rounded-xl">`;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function promptNewCatalog() {
+            const name = prompt("Escribe el nombre del nuevo catálogo/categoría:");
+            if (name && !state.catalogs.includes(name)) {
+                state.catalogs.push(name);
+                saveState();
+                renderCatalogSelects();
+                document.getElementById('bizProdCatalogSelect').value = name;
+            }
+        }
+
+        function publishArticle() {
+            if (!currentActiveBiz) return;
+
+            const title = document.getElementById('bizProdTitle').value.trim();
+            const catalog = document.getElementById('bizProdCatalogSelect').value;
+            const price = parseFloat(document.getElementById('bizProdPrice').value) || 0;
+            const promoPrice = parseFloat(document.getElementById('bizProdPromoPrice').value) || price;
+            const isPromo = document.getElementById('bizIsPromoCheck').checked;
+
+            if (!title) {
+                alert("Por favor ingresa un título para el artículo.");
+                return;
+            }
+
+            if (!selectedUploadDataUrl) {
+                alert("Por favor selecciona una foto o video desde tu dispositivo.");
+                return;
+            }
+
+            // Control de límite máximo: 2 promociones por día por tienda
+            if (isPromo) {
+                const todayStr = new Date().toDateString();
+                const todayPromosCount = state.products.filter(p => 
+                    p.storeId === currentActiveBiz.id && 
+                    p.isPromo && 
+                    new Date(p.createdAt).toDateString() === todayStr
+                ).length;
+
+                if (todayPromosCount >= 2) {
+                    alert("⚠️ Límite de Promociones Diarias Alcanzado\n\nTu tienda ya ha publicado 2 promociones el día de hoy. Para publicar este producto desmarca la casilla 'PROMO DEL DÍA' (se guardará como producto regular en el catálogo) o espera al día de mañana.");
+                    return;
+                }
+            }
+
+            const newProd = {
+                id: "prod_" + Date.now(),
+                storeId: currentActiveBiz.id,
+                storeName: currentActiveBiz.name,
+                storeLogo: currentActiveBiz.logo || "https://placehold.co/100x100/1e293b/00f2fe?text=LOGO",
+                storeWhatsapp: currentActiveBiz.whatsapp || "573000000000",
+                title: title,
+                catalog: catalog,
+                price: price,
+                promoPrice: promoPrice,
+                isPromo: isPromo,
+                mediaUrl: selectedUploadDataUrl,
+                mediaType: selectedUploadType,
+                zone: currentActiveBiz.zone || "Sahagún",
+                createdAt: Date.now()
+            };
+
+            state.products.unshift(newProd);
+            saveState();
+
+            document.getElementById('bizProdTitle').value = "";
+            document.getElementById('bizProdPrice').value = "";
+            document.getElementById('bizProdPromoPrice').value = "";
+            document.getElementById('bizIsPromoCheck').checked = false;
+            if (document.getElementById('bizFileInput')) document.getElementById('bizFileInput').value = "";
+            if (document.getElementById('bizCameraInput')) document.getElementById('bizCameraInput').value = "";
+            document.getElementById('mediaPreviewBox').innerHTML = `<span class="text-xs text-slate-600">Vista Previa de Foto o Archivo</span>`;
+            selectedUploadDataUrl = null;
+
+            renderBusinessMyArticles();
+            alert("¡Artículo publicado con éxito en NEXIO.NET!");
+        }
+
+        function deleteArticle(prodId) {
+            state.products = state.products.filter(p => p.id !== prodId);
+            saveState();
+            renderBusinessMyArticles();
+            renderClientFeed();
+        }
+
+        function renderBusinessMyArticles() {
+            const grid = document.getElementById('bizMyArticlesGrid');
+            if (!currentActiveBiz) return;
+
+            updateDailyPromoBadge();
+
+            const myProds = state.products.filter(p => p.storeId === currentActiveBiz.id);
+
+            if (myProds.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-xs text-slate-500 text-center py-4">No has publicado artículos aún.</p>`;
+                return;
+            }
+
+            let html = "";
+            myProds.forEach(prod => {
+                html += `
+                    <div class="glass-card p-3 rounded-xl border border-slate-800 space-y-2">
+                        <div class="h-32 bg-slate-900 rounded-lg overflow-hidden relative">
+                            ${prod.mediaType === 'video' ? `
+                                <video src="${prod.mediaUrl}" class="w-full h-full object-cover"></video>
+                            ` : `
+                                <img src="${prod.mediaUrl}" class="w-full h-full object-cover">
+                            `}
+                            ${prod.isPromo ? `<span class="absolute top-1 left-1 px-1.5 py-0.5 bg-rose-600 text-white font-bold text-[9px] rounded">PROMO</span>` : ''}
+                        </div>
+                        <h5 class="font-bold text-xs text-white line-clamp-1">${prod.title}</h5>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-cyan-400 font-bold">$${Number(prod.promoPrice).toLocaleString()}</span>
+                            <button onclick="deleteArticle('${prod.id}')" class="text-rose-400 hover:text-rose-300 text-xs font-semibold">
+                                <i class="fa-solid fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+        }
+
+        function openStoreConfigModal() {
+            if (!currentActiveBiz) return;
+            document.getElementById('modalWhatsappInput').value = currentActiveBiz.whatsapp || "";
+
+            const zoneSelect = document.getElementById('modalZoneSelect');
+            let zHtml = "";
+            state.zones.forEach(z => {
+                zHtml += `<option value="${z}" ${z === currentActiveBiz.zone ? 'selected' : ''}>${z}</option>`;
+            });
+            zoneSelect.innerHTML = zHtml;
+
+            document.getElementById('storeConfigModal').classList.remove('hidden');
+        }
+
+        function closeStoreConfigModal() {
+            document.getElementById('storeConfigModal').classList.add('hidden');
+        }
+
+        function uploadStoreLogo(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                if (currentActiveBiz) {
+                    currentActiveBiz.logo = e.target.result;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveStoreConfig() {
+            if (!currentActiveBiz) return;
+
+            currentActiveBiz.whatsapp = document.getElementById('modalWhatsappInput').value.trim();
+            currentActiveBiz.zone = document.getElementById('modalZoneSelect').value;
+
+            const accIdx = state.accounts.findIndex(a => a.id === currentActiveBiz.id);
+            if (accIdx !== -1) {
+                state.accounts[accIdx] = currentActiveBiz;
+            }
+
+            localStorage.setItem('nexio_active_biz', JSON.stringify(currentActiveBiz));
+            saveState();
+
+            closeStoreConfigModal();
+            checkActiveBusinessState();
+            renderClientFeed();
+        }
+
+        /* =============================================================
+           ADMINISTRATOR PANEL LOGIC
+           ============================================================= */
+
+        function generateNewAccessCode() {
+            const name = document.getElementById('adminCodeStoreName').value.trim();
+            const days = parseInt(document.getElementById('adminCodeDuration').value);
+
+            if (!name) {
+                alert("Ingresa el nombre de la tienda para la cual vas a generar el código.");
+                return;
+            }
+
+            const randNum = Math.floor(1000 + Math.random() * 9000);
+            const code = `NEX-${randNum}-${days}D`;
+
+            const newAcc = {
+                id: "acc_" + Date.now(),
+                name: name,
+                code: code,
+                days: days,
+                logo: "https://placehold.co/100x100/1e293b/00f2fe?text=" + encodeURIComponent(name.substring(0, 4)),
+                whatsapp: state.supportPhone,
+                zone: state.zones[0] || "Sahagún",
+                status: "active"
+            };
+
+            state.accounts.push(newAcc);
+            saveState();
+
+            document.getElementById('codeDisplayVal').innerText = code;
+            document.getElementById('generatedCodeResult').classList.remove('hidden');
+
+            renderAdminAccounts();
+            document.getElementById('adminCodeStoreName').value = "";
+        }
+
+        function copyCodeToClipboard() {
+            const codeText = document.getElementById('codeDisplayVal').innerText;
+            
+            const tempArea = document.createElement('textarea');
+            tempArea.value = codeText;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try {
+                document.execCommand('copy');
+                alert("¡Código copiado al portapapeles: " + codeText + "!");
+            } catch (err) {
+                console.error("Copy failed:", err);
+            }
+            document.body.removeChild(tempArea);
+        }
+
+        function saveGlobalAnnouncement() {
+            state.announcement = document.getElementById('adminAnnouncementInput').value.trim();
+            saveState();
+            renderHeaderThemeAndAnnouncement();
+            alert("¡Anuncio global actualizado!");
+        }
+
+        function deleteAccount(accId) {
+            if (confirm("¿Estás seguro de eliminar esta cuenta de negocio? Perderá acceso inmediatamente.")) {
+                state.accounts = state.accounts.filter(a => a.id !== accId);
+                saveState();
+                renderAdminAccounts();
+                renderClientFeed();
+            }
+        }
+
+        function renderAdminAccounts() {
+            const tbody = document.getElementById('adminAccountsTableBody');
+            document.getElementById('accountsCountBadge').innerText = `${state.accounts.length} cuenta(s)`;
+
+            if (state.accounts.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-slate-500">No hay negocios registrados.</td></tr>`;
+                return;
+            }
+
+            let html = "";
+            state.accounts.forEach(acc => {
+                html += `
+                    <tr class="hover:bg-slate-900/50">
+                        <td class="py-2.5">
+                            <div class="font-bold text-white">${acc.name}</div>
+                            <span class="font-mono text-[10px] text-pink-400">${acc.code}</span>
+                        </td>
+                        <td class="py-2.5 text-slate-300 font-semibold">${acc.days} días</td>
+                        <td class="py-2.5">
+                            <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] rounded-full font-bold">Activo</span>
+                        </td>
+                        <td class="py-2.5 text-right">
+                            <button onclick="deleteAccount('${acc.id}')" class="px-2 py-1 bg-rose-900/40 hover:bg-rose-800/60 text-rose-300 rounded text-[11px] font-bold transition">
+                                <i class="fa-solid fa-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+
+        function applyPresetTheme() {
+            const presetKey = document.getElementById('adminPresetThemeSelect').value;
+            if (DEFAULT_PRESET_THEMES[presetKey]) {
+                state.activeTheme = DEFAULT_PRESET_THEMES[presetKey];
+                saveState();
+                renderHeaderThemeAndAnnouncement();
+            }
+        }
+
+        function uploadCustomThemeFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                state.activeTheme.gif = e.target.result;
+                saveState();
+                renderHeaderThemeAndAnnouncement();
+                alert("¡Temática/GIF subida y activada con éxito!");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateThemeTitle() {
+            const newTitle = document.getElementById('adminThemeTitleInput').value.trim();
+            if (newTitle) {
+                state.activeTheme.title = newTitle;
+                saveState();
+                renderHeaderThemeAndAnnouncement();
+                alert("¡Título de evento actualizado!");
+            }
+        }
+
+        function addNewZone() {
+            const input = document.getElementById('adminNewZoneInput');
+            const val = input.value.trim();
+            if (val && !state.zones.includes(val)) {
+                state.zones.push(val);
+                saveState();
+                input.value = "";
+                renderZoneFilterButtons();
+                alert(`¡Zona "${val}" agregada con éxito!`);
+            }
+        }
+    </script>
+<!-- Supabase: sincronización en tiempo real del estado de NEXIO.NET -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  (function () {
+    const SUPABASE_URL = 'https://ltgzoivgyjzwnzcuwfcy.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_xnZiMZC1e8t4ZHLispoWFg_ELmsZ95Y';
+    const TABLE = 'nexio_state';
+    // Claves del estado compartidas entre todos los dispositivos
+    const SHARED_KEYS = ['zones', 'announcement', 'activeTheme', 'audioConfig', 'supportPhone', 'accounts', 'products', 'catalogs'];
+
+    if (!window.supabase) {
+      console.warn('Supabase no disponible; la app sigue funcionando en modo local.');
+      return;
+    }
+
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const localSaveState = saveState;
+    const lastSynced = {};
+    let ready = false;
+
+    const serialize = (v) => JSON.stringify(v);
+
+    function applyRemote(key, value) {
+      if (!SHARED_KEYS.includes(key) || value === null || value === undefined) return false;
+      const json = serialize(value);
+      lastSynced[key] = json;
+      if (serialize(state[key]) === json) return false;
+      state[key] = value;
+      return true;
+    }
+
+    function refreshUI() {
+      localSaveState();
+      if (currentActiveBiz) {
+        const fresh = state.accounts.find(a => a.id === currentActiveBiz.id);
+        if (fresh) {
+          currentActiveBiz = fresh;
+          localStorage.setItem('nexio_active_biz', JSON.stringify(currentActiveBiz));
+        }
+      }
+      try { initApp(); } catch (e) { console.warn('Error al refrescar la vista:', e); }
+    }
+
+    async function pushChanges() {
+      const rows = SHARED_KEYS
+        .filter(k => serialize(state[k]) !== lastSynced[k])
+        .map(k => ({ key: k, value: state[k], updated_at: new Date().toISOString() }));
+      if (!rows.length) return;
+      rows.forEach(r => { lastSynced[r.key] = serialize(r.value); });
+      const { error } = await db.from(TABLE).upsert(rows, { onConflict: 'key' });
+      if (error) {
+        rows.forEach(r => { delete lastSynced[r.key]; });
+        console.error('Error guardando en Supabase:', error.message);
+      }
+    }
+
+    // Cada guardado local también se envía a Supabase
+    saveState = function () {
+      localSaveState();
+      if (ready) pushChanges();
+    };
+
+    async function fetchKey(key) {
+      const { data, error } = await db.from(TABLE).select('value').eq('key', key).maybeSingle();
+      if (error) return console.error('Error leyendo de Supabase:', error.message);
+      if (data && applyRemote(key, data.value)) refreshUI();
+    }
+
+    async function start() {
+      const { data, error } = await db.from(TABLE).select('key, value');
+      if (error) {
+        console.error('No se pudo leer la tabla "' + TABLE + '" en Supabase. Ejecuta supabase/schema.sql en el SQL Editor.', error.message);
+        return;
+      }
+
+      let changed = false;
+      data.forEach(row => { if (applyRemote(row.key, row.value)) changed = true; });
+      ready = true;
+      if (changed) refreshUI();
+      // Sube las claves que aún no existen en la base (primer uso)
+      await pushChanges();
+
+      db.channel('nexio-state-realtime')
+        .on('postgres_changes', { event: '*', schema: 'public', table: TABLE }, (payload) => {
+          const key = (payload.new && payload.new.key) || (payload.old && payload.old.key);
+          if (!key || payload.eventType === 'DELETE') return;
+          // Se vuelve a leer la fila: los payloads grandes (imágenes/videos) pueden llegar truncados
+          fetchKey(key);
+        })
+        .subscribe((status) => {
+          console.log('Supabase Realtime:', status);
+          // Al (re)conectar, se recupera cualquier cambio perdido mientras no había conexión
+          if (status === 'SUBSCRIBED') SHARED_KEYS.forEach(fetchKey);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>
+<script>
+  // Carruseles de promociones y tiendas: arrastrar con el mouse (el dedo ya funciona de forma nativa)
+  (function () {
+    ['promosListGrid', 'storesDirectoryList'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var down = false, moved = false, startX = 0, startLeft = 0;
+      el.addEventListener('mousedown', function (e) {
+        if (el.scrollWidth <= el.clientWidth) return;
+        down = true; moved = false; startX = e.pageX; startLeft = el.scrollLeft;
+      });
+      window.addEventListener('mousemove', function (e) {
+        if (!down) return;
+        var dx = e.pageX - startX;
+        if (!moved && Math.abs(dx) > 5) { moved = true; el.classList.add('is-dragging'); }
+        if (moved) { e.preventDefault(); el.scrollLeft = startLeft - dx; }
+      });
+      window.addEventListener('mouseup', function () {
+        if (!down) return;
+        down = false;
+        el.classList.remove('is-dragging');
+      });
+      // Evita abrir una tienda/enlace al soltar después de arrastrar
+      el.addEventListener('click', function (e) {
+        if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+      }, true);
+      el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+    });
+  })();
+</script>
+<script async="" src="/.netlify/scripts/ar" data-netlify-deploy-id="6ac02432e88c90000787308f" data-netlify-site-id="8d8e1b90-a10e-4bd2-8670-311a212c3321" data-agent-runner-id="6ac02271c6b8f94b3d56f4d0"></script>
+
+</body></html>
