@@ -7,27 +7,16 @@
   ],
   "rewrites": [
     {
-      "source": "/admin",
+      "source": "/admin/:path*",
       "destination": "/admin.html"
     },
     {
-      "source": "/administracion",
+      "source": "/administracion/:path*",
       "destination": "/admin.html"
-    }
-  ],
-  "headers": [
+    },
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
-      ]
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
