@@ -88,7 +88,7 @@ create policy "Admins manage site settings" on public.site_settings for all to a
 -- IMPORTANTE: crea primero el usuario desde Supabase Authentication > Users.
 -- Luego sustituye el correo de abajo y ejecuta el bloque para darle rol de admin:
 -- insert into public.profiles(id, role, display_name)
--- select id, 'admin', 'Administrador Pulso 247' from auth.users where email='eziomontes31@gmail.com'
+-- select id, 'admin', 'Administrador Pulso 247' from auth.users where email='eziomontes31@gamil.com'
 -- on conflict(id) do update set role='admin';
 
 -- Almacenamiento público de imágenes editoriales. La subida se hace desde el endpoint privado usando service_role.
